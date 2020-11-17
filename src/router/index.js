@@ -15,7 +15,6 @@ import MediaOverview from "../components/MediaOverview/index";
 import AthleteRequestedEvents from "../components/AthleteRequestedEvents/index";
 import AthleteParticipatedEvents from "../components/AthleteParticipatedEvents/index";
 import NotificationsOverview from "../components/NotificationsOverview/index";
-import Notifications from "../components/Notifications/index";
 import NotificationsCreate from "../components/NotificationsCreate/index";
 import SwimmersOverview from "../components/SwimmersOverview/index";
 import EventRequestsOverview from "../components/EventRequestsOverview/index";
@@ -24,7 +23,8 @@ import TrainingClass from "../components/TrainingClass/index";
 import TrainingCreate from "../components/TrainingCreate/index";
 import Events from "../v2/pages/Events";
 import EventRegistration from "../v2/pages/EventRegistration";
-import Information from '../v2/pages/Information';
+import Information from "../v2/pages/Information";
+import Notifications from "../v2/pages/Notifications";
 
 Vue.use(Router);
 
@@ -107,15 +107,11 @@ export default new Router({
       component: NotificationsCreate,
     },
     {
-      path: "/notificationsoverview",
-      name: "notificationsoverview",
-      component: NotificationsOverview,
-    },
-    {
-      path: "/notifications/:notificationId",
+      path: "/notifications",
       name: "notifications",
       component: Notifications,
     },
+
     {
       path: "/swimmers",
       name: "swimmers",

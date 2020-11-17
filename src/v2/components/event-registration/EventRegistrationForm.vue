@@ -19,10 +19,9 @@
     <modal :show="show" @close="show = false">
       <div class="modal-content">
         <h3 class="modal-header">
-          You have registered for the following events:
+          Registration complete!
         </h3>
-        <p>Test</p>
-        <p>test</p>
+        <p>Your registration is complete, await for further updates!</p>
         <primary-button class="modal-button">Continue</primary-button>
       </div>
     </modal>

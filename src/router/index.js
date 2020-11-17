@@ -24,6 +24,7 @@ import TrainingClass from "../components/TrainingClass/index";
 import TrainingCreate from "../components/TrainingCreate/index";
 import Events from "../v2/pages/Events";
 import EventRegistration from "../v2/pages/EventRegistration";
+import Information from '../v2/pages/Information';
 
 Vue.use(Router);
 
@@ -129,6 +130,11 @@ export default new Router({
       path: "/events",
       name: "events",
       component: Events,
+    },
+    {
+      path: "/information",
+      name: "information",
+      component: Information,
     },
     {
       path: "/events/:id",

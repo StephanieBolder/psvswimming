@@ -19,7 +19,7 @@ export default {
         name: "Dutch masters",
         date: new Date().toLocaleDateString(),
         location: "Eindhoven",
-        info: "Lorem ipsum yolo swaggins gandalf the white",
+        info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
       },
     };
   },

@@ -1,0 +1,69 @@
+
+<section class="trainingClass">
+  <TopNavigation></TopNavigation>
+
+  <section class="container">
+
+    <v-btn rounded color="#85CBE6" class="send_button_container white--text">Join Class ---- <i class="fa fa-plus" style="font-size:20px;color:white"></i></v-btn>
+
+    <div class="event-card">
+      <div class="event-card__title">
+        <h1>{{training.name}} </h1>
+      </div>
+      <div class="event-card__description">
+        <div>
+          <p>{{training.description}}</p>
+          <p> {{training.location}} </p>
+          <p>Start-time:{{training.startDateTime}} </p> 
+          <p>end-time:{{training.endDateTime}}</p>
+
+          <p>Class type of restraints, such as age limit, sex, and things they teach in the class</p>
+        </div>
+      </div>
+     
+    </div>
+
+    <div class="event-card members">
+       
+      <div class="event-card__title">
+        <h2>Coaches</h2>
+      </div>
+      <div class="event-card__description">
+           <p class="coaches" v-for = "coach in coachlist">  
+                {{coach.appId}}: -- Bob, Dillen
+           </p>
+      </div>
+  </div>
+
+    <div class="event-card  members">
+       
+        <div class="event-card__title">
+          <h5>Class Members of  "{{training.name}}"</h5>
+        </div>
+        <div class="event-card__description">
+          <div class ="classlist" v-for ="person in classlist">
+            <div class="memberDetails flex-container">
+              
+              <div class="member" style="flex-grow: 8">
+                <p>{{person.lastname}}, {{person.firstname}}</p>
+              </div>
+              
+            
+             <div>
+              <v-btn  class="present" style="flex-grow: 2">Present</v-btn>
+              <v-icon v-on:click="deleteparticipant(training.appId, person.appId)" class="event-action-error">mdi-cancel</v-icon>
+             </div>
+            
+
+            </div>
+             
+          </div>
+        </div>
+    </div>
+  </section>
+  
+
+
+  
+</section>
+

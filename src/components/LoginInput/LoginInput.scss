@@ -1,0 +1,67 @@
+@import "./../../main.scss";
+
+.login-input {
+  position: fixed;
+  top: 0;
+  height: 100%;
+}
+
+.login_text {
+    color: $psv-red !important;
+    font-size: 11pt;
+}
+
+.login_text_header {
+    color: $psv-red !important;
+    font-size: 22pt;
+}
+
+.login_text_password {
+    color: $psv-red !important;
+    margin-bottom: 30px;
+    font-size: 11pt;
+}
+
+.login_container{
+    text-align: center;
+    width: calc(250px + 7%);
+    margin-left: calc(50% - calc(calc(250px + 7%)) / 2);
+    margin-top: 100px;
+}
+
+.dev_container {
+  text-align: left;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 40px;
+}
+
+.psvzwemmen_logo_container {
+    width: 180px;
+    height: 180px;
+    margin-left: calc(50% - 90px);
+    background-image: url('./../../assets/psvzwemmenlogo.png');
+    background-size: contain;
+}
+
+.login_button_container {
+    width: 80%;
+}
+
+@media only screen and (max-width: 800px) {
+    .login_container {
+      width: 60%;
+      margin-left: 20%;
+    }
+    .dev_container {
+      width: 96%;
+      margin-left: 2%;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .login_container {
+      width: 80%;
+      margin-left: 10%;
+    }
+  }

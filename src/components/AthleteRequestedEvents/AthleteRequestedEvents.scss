@@ -1,0 +1,26 @@
+@import "./../../main.scss";
+
+.event-container {
+    display: flex;
+    width: calc(100% + 32px);
+    justify-content: space-between;
+}
+
+.event-action-buttons-container {
+    display: flex;
+    width: 100px;
+    justify-content: flex-end;
+}
+
+.event-action-button {
+    margin-left: 5px;
+    margin-top: 8px;
+}
+
+.event-action-info {
+    color: $psv-blue;
+}
+
+.event-action-error {
+    color: $psv-red;
+}

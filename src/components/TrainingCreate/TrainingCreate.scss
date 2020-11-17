@@ -1,0 +1,121 @@
+.trainingCreate {
+}
+
+$psv-red: #E4312B;
+$psv-blue: #85CBE6;
+$psv-purple: #465195;
+
+
+$card-grey: #F1F1F1;
+$card-grey-title: #5A5A5A;
+$card-grey-description: #5A5A5A;
+
+$card-icon-width: 32px;
+$card-icon-font-size: 24px;
+
+$navigation-height: 50px;
+
+.createNews {
+}
+
+.createNewsDiv {
+  width:  100%;
+  text-align: center;
+}
+.ctn-tab {
+    background-color: $psv-red!important;
+    display: inline-block;
+    width: auto;
+    padding-top: 10px;
+    padding-right: 3px;
+    padding-left: 3px;
+
+    p{
+      display: inline-block;
+      font-size: 16px;
+      color: white!important;
+      padding: 5px;
+    }
+  }
+
+  .ctn-tab p:hover{
+    cursor: pointer;
+  }
+
+  .flex-parent {
+    display: flex;
+  }
+  .flex-child {
+    flex: 1;
+  }
+
+  /* Extra Css */
+
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  /* --------------------------------------- */
+
+  input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .trainingform {
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+  }

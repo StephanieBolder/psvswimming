@@ -1,0 +1,57 @@
+<div>
+  <section class="event-requests-overview container">
+    <TopNavigation></TopNavigation>
+    <h1>Pending event requests per swimmer</h1>
+    <div v-if="swimmers != null">
+      <v-select
+      v-model="athleteId"
+      :items="swimmers"
+      item-text="firstname"
+      item-value="appId"
+      label="Select a swimmer"
+      dense
+      solo
+      >
+      </v-select>
+    </div>
+    <div v-if="athlete != null">
+      <div class="event-sub-card athlete-data">
+        Name: {{athlete.firstname}} {{athlete.lastname}}<br>
+        <!-- MOCKDATA FOR DEMO -->
+        Age: 12<br>
+        Gender: Male<br>
+      </div>
+    </div>
+    <!-- REQUESTED EVENTS -->
+    <h1>Events awaiting approval for participation</h1>
+    <div v-for="meet in pendingMeets">
+      <div class="event-card-header">
+        <p class="event-card-header__title">{{meet.name}}</p>
+        <p class="event-card-header__description">{{('0' + meet.entryStartDate[2]).slice(-2)}}/{{('0' + meet.entryStartDate[1]).slice(-2)}}/{{meet.entryStartDate[0]}}</p>
+      </div>
+      <div class="event-card">
+        <div>
+          <div v-for="session in meet.sessions">
+            <div v-for="event in session.events">
+                <div class="event-sub-card event-container">
+                  <div class="event-sub-card__description">
+                    <p class="event-sub-card__title">{{event.swimStyle.stroke.toLowerCase().replace(/^./, event.swimStyle.stroke[0].toUpperCase())}}stroke ({{event.swimStyle.technique.toLowerCase().replace(/^./, event.swimStyle.technique[0].toUpperCase())}} technique) - {{event.swimStyle.distance}}m</p>
+                    <p class="event-sub-card__description">{{('0' + event.dayTime[3]).slice(-2)}}:{{('0' + event.dayTime[4]).slice(-2)}}</p>
+                  </div>
+                  <div class="event-action-buttons-container">
+                    <div v-on:click="approveAthleteParticipationToEvent(athleteId, event.appId)" class="event-action-button">
+                      <v-icon class="event-action-info">mdi-check</v-icon>
+                    </div>
+                    <div v-on:click="rejectAthleteParticipationToEvent(athleteId, event.appId)" class="event-action-button">
+                      <v-icon class="event-action-error">mdi-cancel</v-icon>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+

@@ -1,0 +1,21 @@
+@import "./../../main.scss";
+
+h1{
+    margin-left: 10px;
+}
+.event-card{
+    height: 300px;
+    border-radius: 10px;
+    width: 90%;
+    margin-left: 5%;
+
+    .event-card__title{
+        padding: 10px;
+        font-size: 22px;
+    }
+    .event-card__description{
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+    }
+}

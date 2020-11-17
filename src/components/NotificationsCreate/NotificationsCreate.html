@@ -1,0 +1,31 @@
+
+<section class="adminCreateNotifications">
+  <TopNavigation></TopNavigation>
+  <h1 class ="header">Creating Notifications</h1>
+  <div class ="radio_button">
+    Send to:
+    <input type ="checkbox" id="sendAll" /> All members
+    <input type ="checkbox" id="sendCoaches" /> To Coaches
+    <input type ="checkbox" id="sendSwimmers"/> To Swimmers
+     <!-- <div class="hidden">
+       <select class ="select"> 
+        <option>Select a training class</option>
+        <option v-for="training in trainings">{{training.name}}</option>
+        <option value="Training class 1">Training class 1</option>
+        <option value="Training class 2">Training class 2</option>
+        <option value="Training class 3">Training class 3</option>
+       </select>
+     </div> -->
+     <div class="txtBox">
+      <input type ="text" v-model="titleInput" placeholder ="Enter the title">
+    </div>
+    <div class="txtBox">
+       <label>Message :</label>
+       <textarea v-model="messageInput"></textarea>
+    </div>
+    <div>
+      <v-btn v-on:click="postNotification" rounded color="#85CBE6" class="send_button_container white--text">Send</v-btn>
+    </div>
+  </div>
+</section>
+

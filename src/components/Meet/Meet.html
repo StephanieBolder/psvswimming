@@ -1,0 +1,48 @@
+<div>
+  <section class="meet container">
+    <TopNavigation module="meets"></TopNavigation>
+    <h1>Meet</h1>
+    <div class="event-card-header" v-if="meet != null">
+      <p class="event-card-header__title">{{meet.name}}</p>
+      <p class="event-card-header__description">{{('0' + meet.entryStartDate[2]).slice(-2)}}/{{('0' + meet.entryStartDate[1]).slice(-2)}}/{{meet.entryStartDate[0]}}</p>
+    </div>
+    <div class="event-card" v-if="meet != null">
+      <div>
+        <div v-for="session in meet.sessions">
+          <div v-for="event in session.events">
+              <div class="event-sub-card event-container">
+                <div class="event-sub-card__description">
+                  <p class="event-sub-card__title">{{event.swimStyle.stroke.toLowerCase().replace(/^./, event.swimStyle.stroke[0].toUpperCase())}}stroke ({{event.swimStyle.technique.toLowerCase().replace(/^./, event.swimStyle.technique[0].toUpperCase())}} technique) - {{event.swimStyle.distance}}m</p>
+                  <p class="event-sub-card__description">{{('0' + event.dayTime[3]).slice(-2)}}:{{('0' + event.dayTime[4]).slice(-2)}}</p>
+                </div>
+                <div class="event-action-buttons-container">
+                  <div class="event-action-button" v-if="event.pendingRequests.includes(athleteId) && !event.athleteParticipants.includes(athleteId)">
+                    <!-- REQUEST IS STILL BEING REVIEWED -->
+                    <v-icon>mdi-clock-outline</v-icon>
+                  </div>
+                  <div v-on:click="addAthleteToEventRequests(athleteId, event.appId)" class="event-action-button" v-if="!event.pendingRequests.includes(athleteId) && !event.athleteParticipants.includes(athleteId)">
+                    <!-- REQUEST PARTICIPATION FOR THE EVENT -->
+                    <v-icon class="event-action-info">mdi-plus-circle-outline</v-icon>
+                  </div>
+                  <div v-on:click="removeAthleteFromEventRequests(athleteId, event.appId)" class="event-action-button" v-if="event.pendingRequests.includes(athleteId) && !event.athleteParticipants.includes(athleteId)">
+                    <!-- INVOKE (NOT YET APPROVED) REQUEST FOR THE EVENT -->
+                    <v-icon class="event-action-error">mdi-cancel</v-icon>
+                  </div>
+                  <div class="event-action-button" v-if="!event.pendingRequests.includes(athleteId) && event.athleteParticipants.includes(athleteId)">
+                    <!-- REQUEST HAS BEEN APPROVED BY YOUR COACH -->
+                    <v-icon>mdi-calendar-check</v-icon>
+                  </div>
+                  <div v-on:click="removeAthleteFromEventParticipants(athleteId, event.appId)" class="event-action-button" v-if="!event.pendingRequests.includes(athleteId) && event.athleteParticipants.includes(athleteId)">
+                    <!-- APPROVED SWIMMER WANTS TO WITHDRAW FROM THE EVENT -->
+                    <v-icon class="event-action-error">mdi-cancel</v-icon>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+  

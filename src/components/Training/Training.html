@@ -1,0 +1,58 @@
+
+<section class="training">
+  <TopNavigation></TopNavigation>
+  <h1>Training Component</h1>
+  <section class = "container">
+    <h1>All Trainings </h1> 
+    <v-btn to="/trainingcreate" rounded color="#85CBE6" class="send_button_container white--text">Register Training..... <i class="fa fa-plus" style="font-size:20px;color:white"></i> </v-btn>
+    <div key="training.appId" v-for="training in allTraining">
+      <router-link :to="{ name: 'trainingid', params: {appId:training.appId}}">
+        <div class="event-card">
+            <div class="event-card__title">
+              Training title {{training.appId}}
+            </div>
+            <div class="event-card__description">
+              <div>
+
+              </div>
+              
+              <p>Start-time:{{training.startDateTime}} </p> 
+              <p>end-time:{{training.endDateTime}}</p>
+
+             
+            </div>
+        </div>
+      </router-link>
+  </div>
+
+    <!-- kjhkjhkjhk -->
+    <div  v-for="request in requestList" class="event-card  members">
+       
+      <div class="event-card__title">
+        <h5>Class Requests: {{request.name}} </h5>
+      </div>
+      <div class="event-card__description">
+        <div class ="classlist" v-for="requestee in request.requestedAthletes">
+          <div class="memberDetails flex-container">
+            
+            <div class="member" style="flex-grow: 8">
+              <p><p><h5>Name:</h5>{{requestee.lastname}},{{requestee.firstname}} </p></p>
+            </div>
+            
+          
+           <div>
+            <v-btn v-on:click = "approveRequest(request.appId, requestee.appId)" class="present" style="flex-grow: 2">Approve</v-btn>
+            <v-icon v-on:click="deleteRequest(request.appId, requestee.appId)" class="event-action-error">mdi-cancel</v-icon>
+           </div>
+          
+
+          </div>
+           
+        </div>
+      </div>
+  </div>
+  </section>
+
+  
+</section>
+

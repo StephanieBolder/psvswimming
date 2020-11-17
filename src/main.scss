@@ -1,0 +1,428 @@
+$psv-red: #e4312b;
+$psv-blue: #85cbe6;
+$psv-purple: #465195;
+
+$card-light-grey: #fbfbfb;
+$card-grey: #f1f1f1;
+$card-grey-title: #5a5a5a;
+$card-grey-description: #5a5a5a;
+
+$card-icon-width: 32px;
+$card-icon-font-size: 24px;
+
+$navigation-height: 50px;
+$modal-button-width: 80px;
+$body-font-family: "Josefin sans" !important;
+$font-size-small: 14px;
+$font-size-medium: 16px;
+$font-size-large: 18px;
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  max-width: 100vh;
+  top: 0%;
+  bottom: 0%;
+  position: fixed;
+}
+
+.v-application {
+  font-family: inherit;
+}
+
+.v-application .title {
+  font-family: inherit !important;
+}
+
+body {
+  -ms-overflow-style: none;
+  font-family: "Josefin Sans" !important;
+}
+
+a {
+  text-decoration: none; /* no underline */
+}
+
+.app_content {
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 50px);
+  max-width: 100vh;
+  overflow-y: scroll;
+}
+
+.bottom_navigation {
+  width: 100%;
+  height: $navigation-height;
+  bottom: 0;
+}
+
+h1 {
+  color: $psv-blue;
+  font-size: $font-size-large;
+  margin-bottom: 25px;
+}
+
+.card-base {
+  border-radius: 4px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.event-card {
+  @extend .card-base;
+
+  background: $card-grey;
+  display: grid;
+  margin-top: 16px;
+  padding: 8px 20px;
+  margin-bottom: 35px;
+
+  grid-template-columns: calc(100% - #{$card-icon-width}) $card-icon-width;
+  grid-template-rows: auto;
+
+  .event-card__title {
+    color: $card-grey-title;
+
+    font-weight: bold;
+    font-size: $font-size-small;
+
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .event-card__icon {
+    color: $psv-blue;
+    display: inline-flex;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0 !important;
+    vertical-align: middle;
+    justify-content: center;
+
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    i {
+      color: $psv-blue !important;
+      font-size: $card-icon-font-size;
+    }
+  }
+
+  .event-card__description {
+    color: $card-grey-description;
+
+    font-family: inherit;
+    font-size: 12px;
+
+    grid-column-start: 1;
+    grid-row: 2;
+
+    margin-top: 4px;
+  }
+}
+
+.event-card-header {
+  @extend .card-base;
+
+  background: $card-grey;
+  display: grid;
+  margin-top: 16px;
+  margin-bottom: -10px;
+  padding: 8px 20px;
+
+  grid-template-columns: calc(100% - #{$card-icon-width}) $card-icon-width;
+  grid-template-rows: auto;
+
+  .event-card-header__title {
+    color: $card-grey-title;
+
+    font-weight: bold;
+    font-family: inherit;
+    font-size: $font-size-large;
+    margin-bottom: -5px;
+
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .event-card-header__icon {
+    color: $psv-blue;
+    display: inline-flex;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0 !important;
+    vertical-align: middle;
+    justify-content: center;
+
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    i {
+      color: $psv-blue !important;
+      font-size: $card-icon-font-size;
+    }
+  }
+
+  .event-card-header__description {
+    color: $card-grey-description;
+
+    font-family: inherit;
+    font-size: 12px;
+
+    grid-column-start: 1;
+    grid-row: 2;
+    margin-bottom: 0px;
+    margin-top: 4px;
+  }
+}
+
+.event-sub-card {
+  @extend .card-base;
+
+  background: $card-light-grey;
+  display: grid;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 8px 20px;
+  width: calc(100% + 32px);
+  grid-template-columns: calc(100% - #{$card-icon-width}) $card-icon-width;
+  grid-template-rows: auto;
+
+  .event-sub-card__title {
+    color: $card-grey-title;
+
+    font-weight: bold;
+    font-family: inherit;
+    font-size: $font-size-small;
+    margin-bottom: -2px;
+
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .event-sub-card__icon {
+    color: $psv-blue;
+    display: inline-flex;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0 !important;
+    vertical-align: middle;
+    justify-content: center;
+
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    i {
+      color: $psv-blue !important;
+      font-size: $card-icon-font-size;
+    }
+  }
+
+  .event-sub-card__description {
+    color: $card-grey-description;
+
+    font-family: inherit;
+    font-size: 12px;
+    margin-bottom: 0px;
+
+    grid-column-start: 1;
+    grid-row: 2;
+
+    margin-top: 4px;
+  }
+}
+
+.btn-register {
+  background-color: $psv-blue !important;
+  color: white !important;
+  display: grid;
+  font-size: $font-size-medium;
+  line-height: 50px;
+  padding: 0 20px;
+
+  grid-template-columns: calc(100% - #{$card-icon-width}) $card-icon-width;
+  grid-template-rows: auto;
+
+  span {
+    font-weight: bold;
+  }
+
+  i {
+    color: white !important;
+    font-size: $card-icon-font-size;
+  }
+
+  border-radius: 10px;
+  width: 100%;
+}
+
+.championship-card {
+  background-color: $psv-blue !important;
+  color: white !important;
+  cursor: pointer;
+  display: grid;
+  font-size: $font-size-medium;
+  line-height: 50px;
+  padding: 0 20px;
+
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  grid-template-columns: calc(100% - #{$card-icon-width}) $card-icon-width;
+  grid-template-rows: auto;
+
+  span {
+    font-weight: bold;
+  }
+
+  i {
+    color: white !important;
+    font-size: $card-icon-font-size;
+  }
+
+  border-radius: 10px;
+  width: 100%;
+}
+
+.top-navigation {
+  background: linear-gradient(to bottom right, lighten($psv-red, 18), $psv-red);
+
+  height: $navigation-height;
+  width: 100%;
+
+  .theme--light.v-tabs > .v-tabs-bar {
+    background-color: transparent !important;
+    height: $navigation-height;
+  }
+
+  .v-tabs-slider-wrapper {
+    height: 3px !important;
+  }
+}
+
+.top-navigation-container {
+  color: #fff !important;
+}
+
+.container {
+  margin-top: 32px;
+}
+
+/* Modal */
+
+#modal {
+  display: none;
+}
+
+#modal.is-open {
+  display: block;
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__container {
+  background-color: $psv-blue;
+  color: white;
+  border-radius: 7px;
+  padding: 1em 2em;
+
+  font-size: $font-size-large;
+
+  min-width: 320px;
+  max-width: min(600px, 90%);
+  overflow-y: auto;
+  box-sizing: border-box;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  button:focus {
+    outline: none;
+  }
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__title {
+  font-weight: 800;
+  box-sizing: border-box;
+}
+
+.modal__close {
+  background: transparent;
+  border: 0;
+
+  width: 32px;
+}
+
+.modal__header .modal__close:before {
+  content: "\2715";
+}
+
+.modal__content {
+  margin: 2em 0;
+  line-height: 1.5em;
+  color: #fff;
+  font-size: $font-size-medium;
+}
+
+.modal__btn {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.8);
+
+  width: $modal-button-width;
+
+  font-size: $font-size-small;
+  border-radius: 11px;
+  padding: 0.6em 1.5em;
+
+  -webkit-appearance: button;
+  overflow: visible;
+}
+
+#modal-btn-close {
+  margin-left: calc(100% - #{$modal-button-width} + 1em);
+}
+
+#modal-btn-confirm {
+  display: none;
+}
+
+#modal-btn-cancel {
+  display: none;
+}
+
+.modal__footer {
+  display: flex;
+  width: 100%;
+  padding: 0 1em;
+
+  justify-content: space-between;
+}
+
+/* For some reason, a input is transparent by default. This conflicts with the background */
+.v-input__slot {
+  background: white !important;
+}

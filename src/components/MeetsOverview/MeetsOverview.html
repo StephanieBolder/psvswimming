@@ -1,0 +1,66 @@
+<div>
+  <section class="meets-overview container">
+    <TopNavigation module="meets"></TopNavigation>
+    <h1 class="mx-2">All meets</h1>
+      <v-text-field
+      v-model="search"
+      clearable
+      outlined
+      hide-details
+      label="Search"
+      color= "#85CBE6"
+      class="mx-2"
+     
+      ></v-text-field>
+      <br>
+      <v-select
+      v-model="sortBy"
+      outlined
+      hide-details
+      :items="keys"
+      label="Sort by"
+      color= "#85CBE6"
+      class="mx-2"
+      ></v-select>
+    
+    <v-container fluid style="margin-top: -10px;">
+      <v-data-iterator
+      :items="items"
+      :search="search"
+      :sort-by="sortBy.toLowerCase()"
+      :sort-desc="sortDesc"
+      hide-default-footer
+      >
+      
+      <template v-slot:default="props">
+        <v-row>
+          <v-col
+          v-for="item in props.items"
+          :key="item.name"
+          cols="12"
+          sm="6"
+          md="4"
+          lg="4"
+          >
+        <router-link :to="{ name: 'meet', params: { meetId: item.appId }}">
+          <div class="event-card-header">
+            <p class="event-card-header__title">{{item.name}}</p>
+            <p class="event-card-header__description">{{('0' + item.entryStartDate[2]).slice(-2)}}/{{('0' + item.entryStartDate[1]).slice(-2)}}/{{item.entryStartDate[0]}}</p>
+          </div>
+          <div class="event-card meet_overview_item_container">
+            <div>
+                <p class="meet_description_text"><v-icon class="meet_icon">mdi-crosshairs-gps</v-icon>Location: {{item.city}}, {{item.state}}</p>
+                <p class="meet_description_text"><v-icon class="meet_icon">mdi-timetable</v-icon>Deadline: {{('0' + new Date(item.deadline).getDate()).slice(-2)}}/{{('0' + new Date(item.deadline).getMonth()).slice(-2)}}/{{new Date(item.deadline).getFullYear()}} - {{('0' + item.deadlineTime[3]).slice(-2)}}:{{('0' + item.deadlineTime[4]).slice(-2)}}</p>
+                <p class="meet_description_text"><v-icon class="meet_icon">mdi-cancel</v-icon>Withdraw until: {{('0' + item.withdrawUntil[2]).slice(-2)}}/{{('0' + item.withdrawUntil[1]).slice(-2)}}/{{item.withdrawUntil[0]}} - {{('0' + item.withdrawUntil[3]).slice(-2)}}:{{('0' + item.withdrawUntil[4]).slice(-2)}}</p>
+            </div>
+          </div>
+        </router-link>
+
+      </v-col>
+    </v-row>
+  </template>
+  </v-data-iterator>
+  </v-container>
+  
+  </section>
+</div>

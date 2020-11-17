@@ -1,0 +1,48 @@
+@import "./../../main.scss";
+.trainingClass {
+}
+
+.event-action-error {
+    color: $psv-red;
+}
+
+.memberDetails{
+ background-color: white!important;
+ border-radius: 8px;
+ font-family: Lato;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 27px;
+margin-bottom: 10px;
+padding: 10px;
+}
+
+.members{
+    background: rgba(133, 203, 230, 0.32);
+    
+}
+
+.present{
+    border-radius: 8px;
+    background-color:$psv-blue!important;
+    color: whitesmoke;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: stretch;
+    background-color: #f1f1f1;
+  }
+
+  .coaches{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    
+  }

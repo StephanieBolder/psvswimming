@@ -1,0 +1,47 @@
+@import "./../../main.scss";
+
+.news-publish_text {
+  color: $psv-red !important;
+  font-size: 11pt;
+}
+
+.news-publish_text_header {
+  color: $psv-red !important;
+  font-size: 22pt;
+}
+
+.news-publish_container{
+  text-align: center;
+  width: calc(800px + 7%);
+  margin-left: calc(50% - calc(calc(800px + 7%)) / 2);
+  margin-top: 100px;
+}
+
+.dev_container {
+  text-align: left;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 40px;
+}
+
+.news-publish_button_container {
+  width: 20%;
+}
+
+@media only screen and (max-width: 800px) {
+  .news-publish_container {
+    width: 60%;
+    margin-left: 20%;
+  }
+  .dev_container {
+    width: 96%;
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .news-publish_container {
+    width: 80%;
+    margin-left: 10%;
+  }
+}

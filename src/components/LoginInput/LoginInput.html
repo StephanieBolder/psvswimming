@@ -1,0 +1,41 @@
+<div class="login-input">
+  <div class="login_container">
+    <form>
+      <div class="psvzwemmen_logo_container">
+        
+      </div>
+      <p class="login_text_header">SIGN IN</p>
+      <v-text-field v-model="emailInput"
+        label="Email"
+        required
+        outlined
+        :rules="emailRules"
+        color="#85CBE6"
+      ></v-text-field>
+      <v-text-field v-model="passwordInput"
+      label="Password"
+      required
+      outlined
+      color="#85CBE6"
+      type="password"
+      autocomplete="on"
+      ></v-text-field>
+      <a router-link="/"><p class="login_text_password">Forgot your password?</p></a>
+      <v-btn v-on:click="authenticate" rounded color="#85CBE6"  class="login_button_container white--text">Sign in</v-btn>
+    </form>
+  </div>
+  <!-- DELETE IN FINAL DELIVERY -->
+  <!--
+  <v-card class="dev_container">
+    <p style="text-align: left;" class="login_text">
+      <b>Dev notes:</b><br>
+      * Make sure the API is running.<br>
+      * The current token is valid for 24 hours. You can manually delete the token by removing it from the localstorage or by logging out manually.<br>
+      * A user automatically gets logged out if (s)he tries to call the backend or switch component after the token is expired.<br>
+      * For usable credentials: see the AuthMockContext, or use:<br><br>
+      <b>Email:</b> admin@admin.nl<br>
+      <b>Password:</b> admin
+    </p>
+    -->
+  </v-card>
+</div>

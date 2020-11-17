@@ -1,0 +1,24 @@
+<div>
+  <section class="container">
+  <TopNavigation module="profile"></TopNavigation>
+  <h1>Profile</h1>
+  <div class="profile__container" v-if="user != null">
+    <div class="profile__profile-picture__container">
+      <div class="profile__profile-picture">
+        <img alt="Profile picture" src="user.png" />
+      </div>
+      <div class="profile__profile-name">
+        <span>Name: {{user.firstname}} {{user.lastname}}</span>
+      </div>
+      <div class="profile__profile-role">
+        <span>Role: {{user.roleType.toLowerCase().replace(/^./, user.roleType[0].toUpperCase())}}</span>
+      </div>
+      <div class="profile__profile-email">
+        <span>Email: <a v-bind:href="'mailto:' + user.email">{{user.email}}</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+

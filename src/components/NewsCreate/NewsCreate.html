@@ -1,0 +1,36 @@
+<section class="createNews">
+  <TopNavigation module="media"></TopNavigation>
+  <section class="container">
+    <div class="news-publish_container">
+      <!-- News Form -->
+      <form>
+        <p class="news-publish_text_header">Publish News Article</p>
+        <v-text-field v-model="news.title"
+                      label="Title"
+                      required
+                      outlined
+                      color="#85CBE6"
+        ></v-text-field>
+        <v-text-field v-model="news.author"
+                      label="Author"
+                      required
+                      outlined
+                      color="#85CBE6"
+        ></v-text-field>
+        <v-select v-model="news.status"
+                  label="Status"
+                  :items="items"
+                  outlined
+                  color="#85CBE6"
+        ></v-select>
+        <v-textarea v-model="news.story"
+                      label="Story"
+                      required
+                      outlined
+                      color="#85CBE6"
+        ></v-textarea>
+        <v-btn v-on:click="publishNews" color="#85CBE6" class="news-publish_button_container white--text">Publish</v-btn>
+      </form>
+    </div>
+  </section>
+</section>

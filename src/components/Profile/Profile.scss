@@ -1,0 +1,52 @@
+@import "src/main";
+
+$profile-picture-size: 4em;
+
+.profile {
+  background: white;
+}
+
+.profile__container {
+  background: transparent;
+}
+
+.profile__profile-picture__container {
+  background: $psv-blue;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 130px auto;
+  padding: 12px 8px;
+
+  .profile__profile-picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column: 1;
+
+    img {
+      background: white;
+      height: $profile-picture-size;
+      width: auto;
+      border-radius: 100%;
+    }
+  }
+
+  .profile__profile-name {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .profile__profile-role {
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  .profile__profile-email {
+    color: white;
+  }
+}

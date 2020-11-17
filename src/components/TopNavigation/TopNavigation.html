@@ -1,0 +1,48 @@
+<div class="top-navigation">
+    <!-- Media menu -->
+    <div v-if="module == 'media'">
+        <v-tabs fixed-tabs slider-color="#85CBE6">
+            <v-tab class="top-navigation-container" to="/">
+                Overview
+            </v-tab>
+            <v-tab class="top-navigation-container" to="/notificationsoverview">
+                Notifications
+            </v-tab>
+        </v-tabs>
+    </div>
+    <!-- Meets menu -->
+    <div v-else-if="module == 'meets'">
+        <v-tabs fixed-tabs slider-color="#85CBE6">
+            <v-tab class="top-navigation-container" to="/meetrequests">
+                Active requests
+            </v-tab>
+            <v-tab class="top-navigation-container" to="/meets">
+                Registration
+            </v-tab>
+            <v-tab class="top-navigation-container" to="/meethistory">
+                History
+            </v-tab>
+        </v-tabs>
+    </div>
+    <!-- Profile menu -->
+    <div v-else-if="module == 'profile'">
+        <v-tabs fixed-tabs slider-color="#85CBE6">
+            <v-tab class="top-navigation-container" to="/profile">
+                Profile
+            </v-tab>
+            <v-tab class="top-navigation-container" to="/settings">
+                Settings
+            </v-tab>
+        </v-tabs>
+    </div>
+    <!-- Default menu -->
+    <div v-else>
+        <v-tabs fixed-tabs slider-color="#85CBE6">
+            <v-tab class="top-navigation-container">
+                PSV Zwemmen
+            </v-tab>
+        </v-tabs>
+    </div>
+</div>
+
+

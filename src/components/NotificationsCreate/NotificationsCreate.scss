@@ -1,0 +1,81 @@
+.notificationsCreate {
+
+}
+.select{
+    background: #FBFBFB;
+    border: 0.5px solid #B2B2B2;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+}
+.send_button_container {
+    width: 40%;
+    margin-top: 8px;
+    text-align: center;
+    display: inline-block;
+    left: 25%;
+}
+.hidden{
+    display:none;
+    margin-left: 180px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: Lato;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    border-radius: .5em;
+}
+.switch:checked ~ .hidden{
+    display:block;
+}
+.txtBox{
+    border: 2px solid #B2B2B2;
+    margin: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 90%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    font-family: Lato;
+    font-style: normal;
+    input {
+        outline:none;
+       }
+}
+.txtBox label{
+    display: block;
+    text-align: left;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.txt input, .txtBox textarea{
+    width: 100%;
+    border: none;
+    background: none;
+    outline:none;
+    font-size: 18px;
+    margin-top: 6px;
+}
+.radio_button{
+    margin-left: 30px;
+}
+.btnSend{
+    text-align: center;
+    display: inline-block;
+    left: 30%;
+    position: absolute;
+    background: #85CBE6;
+    border-radius: 15px;
+    padding: 14px 0;
+    color: white;
+    cursor: pointer;
+    margin-top: 8px;
+    width: 40%;
+}
+.header{
+    margin-left: 30px;
+}

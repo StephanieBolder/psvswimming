@@ -1,0 +1,54 @@
+<section class="user-register">
+  <TopNavigation></TopNavigation>
+  <div class="user-register-input">
+    <div class="user-register_container">
+      <form>
+        <p class="user-register_text_header">Register new User</p>
+        <v-select v-model="selectedUserType"
+                  label="Select type"
+                  :items="userTypes"
+                  outlined
+                  color="#85CBE6"
+        ></v-select>
+        <v-text-field v-model="emailInput"
+                      label="Email"
+                      required
+                      outlined
+                      :rules="emailRules"
+                      color="#85CBE6"
+        ></v-text-field>
+        <v-text-field v-model="firstNameInput"
+                      label="Name"
+                      required
+                      outlined
+                      :rules="nameRules"
+                      color="#85CBE6"
+        ></v-text-field>
+        <v-text-field v-model="lastNameInput"
+                      label="Surname"
+                      required
+                      outlined
+                      :rules="nameRules"
+                      color="#85CBE6"
+        ></v-text-field>
+        <div v-if="selectedUserType === 'Swimmer'">
+          <v-text-field v-model="membershipInput"
+                        label="Membership no."
+                        required
+                        outlined
+                        color="#85CBE6"
+          ></v-text-field>
+        </div>
+        <div v-else-if="selectedUserType === 'Coach'">
+        </div>
+        <div v-else>
+          Please select the type of user you wish to create.
+          <br>
+          <br>
+        </div>
+        <v-btn v-on:click="register" v-bind:disabled="loading" color="#85CBE6" class="user-register_button_container white--text">Register</v-btn>
+      </form>
+    </div>
+  </div>
+</section>
+

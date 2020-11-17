@@ -1,0 +1,38 @@
+
+<section class="trainingCreate">
+  <TopNavigation></TopNavigation>
+
+  <section class="container">
+      
+      <div >
+        <h3>Register training Article</h3>
+      <!-- News Form -->
+      <form class="trainingform" id="trainingForm" action="">
+
+        <label for="fname">Class id</label>
+        <input type="text" id="fname" v-model="appId" placeholder="Unique Class name...">
+
+        <label for="fid">Class Name</label>
+        <input type="text" id="fid" v-model="tname" placeholder="Unique Class name...">
+
+        <label for="fid">Class Name</label>
+        <input type="text" id="fid" v-model="tdescription" placeholder="Unique Class Description...">
+
+        <p>
+        <label for="startDateTime">Startdate: </label>
+        <input type="datetime-local" id="startSate" name="endDate">
+        <span>  | </span>
+        <label for="endDateTime">Enddate: </label>
+        <input type="datetime-local" id="endDate" name="endDate">
+        </p>
+        
+        <v-btn v-on:click = "postTraining"  rounded color="#85CBE6" class="send_button_container white--text">Create Training</v-btn>
+
+      </form>
+
+      
+      </div>
+  </section>
+
+</section>
+

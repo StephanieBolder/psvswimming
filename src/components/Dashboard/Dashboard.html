@@ -1,0 +1,27 @@
+<div>
+  <section class="container">
+    <TopNavigation module="media"></TopNavigation>
+    <div class="card" v-if="activeUser != null && activeUser.roleType == 'ADMIN'">
+      <v-btn to="/create-news">Post news item</v-btn>
+    </div>
+    <div>
+      <!-- Dirty, but good enough for demo -->
+      <h1 style="margin-top: 1em">News</h1>
+      
+      <div v-bind:key="event.id" v-for="event in articles">
+        <router-link :to="{ name: 'news', params: { id: event.id }}">
+        <div class="event-card-news">
+          <div class="event-card__title">
+            {{event.name}}
+          </div>
+          
+          <div class="event-card__description">
+            {{event.preview}}
+          </div>
+        </div>
+      </router-link>
+      </div>
+    </div>
+  </section>
+</div>
+

@@ -1,0 +1,57 @@
+<div class="BottomNavigation">
+  
+    <v-bottom-navigation
+    v-if="activeUser != null"
+    grow
+    class="bottom-navigation-container"
+    :value="activeBtn"
+    color="white"
+  >
+    <!-- VISIBLE FOR ALL ROLES -->
+    <v-btn to="/" class="bottom_navigation_button">
+      <span class="">Dashboard</span>
+      <v-icon class="">mdi-home</v-icon>
+    </v-btn>
+
+    <!-- VISIBLE FOR ALL ROLES -->
+    <v-btn to="/profile" class="bottom_navigation_button">
+      <span class="">{{activeUser.firstname}}</span>
+      <v-icon class="">mdi-account</v-icon>
+    </v-btn>
+
+    <!-- VISIBLE FOR SWIMMERS ONLY -->
+    <v-btn to="/meets" class="bottom_navigation_button" v-if="activeUser.roleType == 'SWIMMER'">
+      <span class="">Meets</span>
+      <v-icon class="">mdi-pool</v-icon>
+    </v-btn>
+
+    <!-- VISIBLE FOR COACHES ONLY -->
+    <v-btn to="/swimmers" class="bottom_navigation_button" v-if="activeUser.roleType == 'COACH'">
+      <span class="">Swimmers</span>
+      <v-icon class="">mdi-swim</v-icon>
+    </v-btn>
+
+    <!-- VISIBLE FOR COACHES ONLY -->
+    <v-btn to="/eventrequests" class="bottom_navigation_button" v-if="activeUser.roleType == 'COACH'">
+      <span class="">Requests</span>
+      <v-icon class="">mdi-calendar-clock</v-icon>
+    </v-btn>
+
+     <!-- VISIBLE FOR COACHES ONLY -->
+     <!-- <v-btn to="/training" class="bottom_navigation_button" v-if="activeUser.roleType == 'COACH'">
+      <span class="">Trainings</span>
+      <v-icon class="">mdi-chart-areaspline</v-icon>
+    </v-btn> -->
+
+    <!-- VISIBLE FOR ALL ROLES -->
+    <v-btn to="/logout" class="bottom_navigation_button">
+      <span class="">Logout</span>
+      <v-icon class="">mdi-history</v-icon>
+    </v-btn>
+
+  </v-bottom-navigation>
+
+
+</div>
+
+

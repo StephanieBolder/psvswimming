@@ -1,0 +1,53 @@
+@import "./../../main.scss";
+
+.user-register_text {
+  color: $psv-red !important;
+  font-size: 11pt;
+}
+
+.user-register_text_header {
+  color: $psv-red !important;
+  font-size: 22pt;
+}
+
+.user-register_text_password {
+  color: $psv-red !important;
+  margin-bottom: 30px;
+  font-size: 11pt;
+}
+
+.user-register_container{
+  text-align: center;
+  width: calc(250px + 7%);
+  margin-left: calc(50% - calc(calc(250px + 7%)) / 2);
+  margin-top: 100px;
+}
+
+.dev_container {
+  text-align: left;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 40px;
+}
+
+.login_button_container {
+  width: 80%;
+}
+
+@media only screen and (max-width: 800px) {
+  .login_container {
+    width: 60%;
+    margin-left: 20%;
+  }
+  .dev_container {
+    width: 96%;
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .login_container {
+    width: 80%;
+    margin-left: 10%;
+  }
+}

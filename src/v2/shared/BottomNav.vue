@@ -4,7 +4,7 @@
       <router-link :to="{ name: 'home' }">
         <img class="icon" src="@/assets/Home.png" alt="" />
       </router-link>
-      <router-link :to="{ name: 'notifications' }">
+      <router-link :to="{ name: 'events' }">
         <img class="icon" src="@/assets/Activity.png" alt="" />
       </router-link>
       <router-link :to="{ name: 'profile' }">
@@ -21,6 +21,8 @@ export default {};
 <style>
 .nav {
   box-shadow: none !important;
+  display: flex;
+  justify-content: space-between;
 }
 
 .icon {

@@ -5,8 +5,11 @@
         <div class="training-details-wrapper">
           <div class="training-details">
             <div class="circle"></div>
-            <p class="training-details-text">
-              {{ train.location }} {{ train.date }}
+            <p class="training-details-location">
+              {{ train.location }}
+            </p>
+            <p class="training-details-date">
+              {{ train.date }}
             </p>
           </div>
         </div>
@@ -22,15 +25,10 @@ export default {
   data() {
     return {
       trainings: [
-        { id: 1, date: new Date().toLocaleString(), location: "Eindhoven" },
-        { id: 2, date: new Date().toLocaleString(), location: "Einoven" },
-        { id: 3, date: new Date().toLocaleString(), location: "Eindhoven" },
-        { id: 4, date: new Date().toLocaleString(), location: "Eindhoven" },
-        { id: 5, date: new Date().toLocaleString(), location: "Einoven" },
-        { id: 6, date: new Date().toLocaleString(), location: "Eindhoven" },
-        { id: 7, date: new Date().toLocaleString(), location: "Eindhoven" },
-        { id: 8, date: new Date().toLocaleString(), location: "Einoven" },
-        { id: 9, date: new Date().toLocaleString(), location: "Eindhoven" },
+        { id: 1, date: "27 nov 2020", location: "Eindhoven" },
+        { id: 2, date: "7 dec, 2020", location: "Tilburg" },
+        { id: 3, date: "14 dec, 2020", location: "Eindhoven" },
+        { id: 4, date: "21 dec, 2020", location: "Tilburg" },
       ],
     };
   },
@@ -42,9 +40,15 @@ p {
   margin-bottom: 0;
 }
 
-.training-details-text {
+.training-details-location {
   z-index: 5;
   font-weight: 500;
+}
+
+.training-details-date {
+  z-index: 5;
+  font-weight: 200;
+  font-size: 14px;
 }
 
 .training-details {

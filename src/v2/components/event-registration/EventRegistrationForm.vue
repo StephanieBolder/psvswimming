@@ -22,7 +22,9 @@
           Registration complete!
         </h3>
         <p>Your registration is complete, await for further updates!</p>
-        <primary-button class="modal-button">Continue</primary-button>
+        <router-link :to="{ name: 'events' }">
+                <button class="modal-button">Continue</button>
+              </router-link>
       </div>
     </modal>
   </form>

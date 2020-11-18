@@ -15,12 +15,14 @@
         <div class="training-details-wrapper">
           <div class="training-details">
             <div class="circle"></div>
+            <div class="test">
             <p class="training-details-text">
               Dutch Masters
             </p>
-            <p >
+            <p class="location-text">
               27 nov 2020, Eindhoven
             </p>
+            </div>
           </div>
         </div>
       </card>
@@ -32,7 +34,9 @@
               <div class="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
                 </div>
                 <div class="button">
-                <primary-button class="modal-button">Register</primary-button>
+                   <router-link :to="{ name: 'eventDetail' }">
+                <button class="modal-button">Register</button>
+              </router-link>
                 </div>
               </template>
         
@@ -52,7 +56,7 @@
             <p class="training-details-text">
               Eindhoven PSV champ.
             </p>
-            <p>
+            <p class="location-text">
               2 dec 2020, Eindhoven
             </p>
           </div>
@@ -66,7 +70,9 @@
               <div class="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
                 </div>
                 <div class="button">
-                <primary-button class="modal-button">Register</primary-button>
+                <router-link :to="{ name: 'eventDetail' }">
+                <button class="modal-button">Register</button>
+              </router-link>
                 </div>
               </template>
         
@@ -87,7 +93,7 @@
             <p class="training-details-text">
               Tilburgse Zwemmerschap
             </p>
-            <p >
+            <p class="location-text">
               19 jan 2020, Tilburg
             </p>
           </div>
@@ -121,7 +127,7 @@
             <p class="training-details-text">
               Dutch Masters
             </p>
-            <p>
+            <p class="location-text">
               20 jan 2020, Rotterdam
             </p>
             
@@ -136,7 +142,9 @@
               <div class="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
                 </div>
                 <div class="button">
-                <primary-button class="modal-button">Register</primary-button>
+                <router-link :to="{ name: 'eventDetail' }">
+                <button class="modal-button">Register</button>
+              </router-link>
                 </div>
               </template>
         
@@ -161,7 +169,7 @@
             <p class="training-details-text">
               Dutch Masters
             </p>
-            <p >
+            <p class="location-text">
               07 nov 2020, Rotterdam
             </p>
           </div>
@@ -198,7 +206,7 @@
             <p class="training-details-text">
               Bredase kampioenschappen
             </p>
-            <p >
+            <p class="location-text">
               20 nov 2020, Breda
             </p>
           </div>
@@ -348,6 +356,17 @@ p {
 
 .modal-button {
   margin-top: 16px;
+}
+
+.location-text {
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.test {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 </style>

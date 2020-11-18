@@ -1,28 +1,9 @@
 <template>
-  <card>
+  <card class="margin-card">
     <div class="card-container">
       <div class="card-image">
         <div class="shield">
-          <svg
-            class="icon"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
-            ></path>
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
-            ></path>
-          </svg>
+          <img class="icon" src="@/assets/Camera.png" alt="" />
         </div>
       </div>
       <div class="card-content">
@@ -62,6 +43,10 @@ export default {
 </script>
 
 <style scoped>
+.margin-card {
+  margin-bottom: 16px;
+}
+
 .card-container {
   display: flex;
 }
@@ -89,15 +74,22 @@ export default {
   font-size: 12px;
   color: #666666;
   text-align: right;
+  margin-bottom: -12px !important;
+  margin-right: 12px;
 }
 
 .card-title {
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .card-text {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 300;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
 }
 </style>

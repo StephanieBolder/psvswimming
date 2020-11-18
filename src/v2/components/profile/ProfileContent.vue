@@ -32,4 +32,10 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+
+.v-application .title {
+  font-weight: 100 !important;
+  font-size: 16px !important;
+}
+
 </style>

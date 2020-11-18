@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="content">
+    <top-nav />
     <page-header><template #heading>Notifications</template> </page-header>
     <div class="notifications-container">
       <notification-card
@@ -15,15 +16,17 @@
 <script>
 import NotificationCard from "../components/notifications/NotificationCard.vue";
 import PageHeader from "../shared/PageHeader.vue";
+import TopNav from "../shared/TopNav.vue";
 
 export default {
-  components: { NotificationCard, PageHeader },
+  components: { NotificationCard, PageHeader, TopNav },
   data() {
     return {
       notifications: [
-        { title: "Test1", content: "Example1" },
-        { title: "Test2", content: "Example3" },
-        { title: "Test3", content: "Example3" },
+        { title: "Pictures of the PSV Swimmers", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis." },
+        { title: "New Event Registered", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis." },
+        { title: "Results are in!", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis." },
+        { title: "New Event Registered", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis." },
       ],
     };
   },
@@ -31,7 +34,12 @@ export default {
 </script>
 
 <style scoped>
-.notifications-container {
-  margin: 0px 16px;
+
+
+.content {
+  padding: 0px 20px;
+  overflow-y: scroll;
 }
+
+
 </style>

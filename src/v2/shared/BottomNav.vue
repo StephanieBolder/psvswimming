@@ -1,16 +1,15 @@
-
 <template>
   <div class="nav-height">
     <v-bottom-navigation class="nav">
-      <v-btn>
-         <img class="icon" src="@/assets/Home.png" alt="">
-      </v-btn>
-      <v-btn>
-        <img class="icon" src="@/assets/Activity.png" alt="">
-      </v-btn>
-      <v-btn>
-        <img class="icon" src="@/assets/Profile.png" alt="">
-      </v-btn>
+      <router-link :to="{ name: 'home' }">
+        <img class="icon" src="@/assets/Home.png" alt="" />
+      </router-link>
+      <router-link :to="{ name: 'notifications' }">
+        <img class="icon" src="@/assets/Activity.png" alt="" />
+      </router-link>
+      <router-link :to="{ name: 'profile' }">
+        <img class="icon" src="@/assets/Profile.png" alt="" />
+      </router-link>
     </v-bottom-navigation>
   </div>
 </template>
@@ -28,7 +27,6 @@ export default {};
   width: 32px;
   height: 32px;
 }
-
 
 .nav-height {
   height: 50px;

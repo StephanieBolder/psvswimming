@@ -21,8 +21,8 @@ export default {};
 <style>
 .nav {
   box-shadow: none !important;
-  display: flex;
-  justify-content: space-between;
+  display: flex !important;
+  justify-content: space-around !important;
 }
 
 .icon {
@@ -32,5 +32,6 @@ export default {};
 
 .nav-height {
   height: 50px;
+  display: flex;
 }
 </style>

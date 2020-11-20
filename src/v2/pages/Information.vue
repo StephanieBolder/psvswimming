@@ -3,7 +3,9 @@
     <v-window v-model="onboarding">
     <v-window-item>
         <div class="flex-col">
-            <div class="skip-information">Skip</div>
+            <router-link :to="{ name: 'profile' }">
+              <div class="skip-information">Skip</div>
+              </router-link>
             <div class=""><div class="titel">Easily register for events</div></div>
             <img class="info-illustration" src="@/assets/info1.jpg" alt="">
             <div class="info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
@@ -12,7 +14,9 @@
     </v-window-item>
       <v-window-item>
         <div class="flex-col">
-            <div class="skip-information">Skip</div>
+            <router-link :to="{ name: 'profile' }">
+              <div class="skip-information">Skip</div>
+              </router-link>
             <div class=""><div class="titel">Check out your results, agenda and training schedule</div></div>
             <img class="info-illustration" src="@/assets/info2.jpg" alt="">
             <div class="info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
@@ -21,7 +25,9 @@
     </v-window-item>
     <v-window-item>
         <div class="flex-col">
-            <div class="skip-information">Skip</div>
+            <router-link :to="{ name: 'profile' }">
+              <div class="skip-information">Skip</div>
+              </router-link>
             <div class=""><div class="titel">Get notifications from your club</div></div>
             <img class="info-illustration" src="@/assets/info3.jpg" alt="">
             <div class="info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>

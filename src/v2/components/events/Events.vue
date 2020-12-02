@@ -1,229 +1,86 @@
 <template>
   <div>
     <vue-tabs>
-
       <!-- new events -->
       <v-tab title="New">
-
-<!-- card 1 -->
-        <div class="card-margin">
-          <dropdown>
-            <template #header>
-  <div class="trainings">
-    <div class="training-container">
-      <card>
-        <div class="training-details-wrapper">
-          <div class="training-details">
-            <div class="circle"></div>
-            <p class="training-details-text">
-              Dutch Masters
-            </p>
-            <p >
-              27 nov 2020, Eindhoven
-            </p>
-          </div>
-        </div>
-      </card>
-    </div>
-  </div>
-            </template>
-            <template #content>
-              <v-divider style="margin-bottom: 8px;"></v-divider>
-              <div class="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
-                </div>
-                <div class="button">
-                <primary-button class="modal-button">Register</primary-button>
-                </div>
-              </template>
-        
-          </dropdown>
-        </div>
-
-<!-- card 2 -->
-        <div  class="card-margin">
-          <dropdown>
-            <template #header>
-  <div class="trainings">
-    <div class="training-container">
-      <card>
-        <div class="training-details-wrapper">
-          <div class="training-details">
-            <div class="circle"></div>
-            <p class="training-details-text">
-              Eindhoven PSV champ.
-            </p>
-            <p>
-              2 dec 2020, Eindhoven
-            </p>
-          </div>
-        </div>
-      </card>
-    </div>
-  </div>
-            </template>
-            <template #content>
-              <v-divider style="margin-bottom: 8px;"></v-divider>
-              <div class="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
-                </div>
-                <div class="button">
-                <primary-button class="modal-button">Register</primary-button>
-                </div>
-              </template>
-        
-          </dropdown>
-        </div>
-      
-
-<!-- card 3 -->
-        <div class="card-margin">
-          <dropdown>
-            <template #header>
-  <div class="trainings">
-    <div class="training-container">
-      <card>
-        <div class="training-details-wrapper">
-          <div class="training-details">
-            <div class="circle"></div>
-            <p class="training-details-text">
-              Tilburgse Zwemmerschap
-            </p>
-            <p >
-              19 jan 2020, Tilburg
-            </p>
-          </div>
-        </div>
-      </card>
-    </div>
-  </div>
-            </template>
-            <template #content>
-              <v-divider style="margin-bottom: 8px;"></v-divider>
-              <div class="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
-                </div>
-                <div class="button">
-                <primary-button class="modal-button">Register</primary-button>
-                </div>
-              </template>
-        
-          </dropdown>
-        </div>
-
-<!-- card 4 -->
-        <div class="card-margin">
-          <dropdown>
-            <template #header>
-  <div class="trainings">
-    <div class="training-container">
-      <card>
-        <div class="training-details-wrapper">
-          <div class="training-details">
-            <div class="circle"></div>
-            <p class="training-details-text">
-              Dutch Masters
-            </p>
-            <p>
-              20 jan 2020, Rotterdam
-            </p>
-            
-          </div>
-        </div>
-      </card>
-    </div>
-  </div>
-            </template>
-            <template #content>
-              <v-divider style="margin-bottom: 8px;"></v-divider>
-              <div class="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
-                </div>
-                <div class="button">
-                <primary-button class="modal-button">Register</primary-button>
-                </div>
-              </template>
-        
-          </dropdown>
-        </div>
-        </v-tab>
-
-
-<!-- registered events -->
-      <v-tab title="Registered">
-
         <!-- card 1 -->
-        <div class="card-margin">
-          <dropdown>
-            <template #header>
-  <div class="trainings">
-    <div class="training-container">
-      <card>
-        <div class="training-details-wrapper">
-          <div class="training-details">
-            <div class="circle"></div>
-            <p class="training-details-text">
-              Dutch Masters
-            </p>
-            <p >
-              07 nov 2020, Rotterdam
-            </p>
+        <div v-for="event in newEvents" :key="event.id">
+          <div class="card-margin">
+            <dropdown>
+              <template #header>
+                <div class="trainings">
+                  <div class="training-container">
+                    <card>
+                      <div class="training-details-wrapper">
+                        <div class="training-details">
+                          <div class="circle"></div>
+                          <p class="training-details-text">
+                            Dutch Masters
+                          </p>
+                          <p>
+                            27 nov 2020, Eindhoven
+                          </p>
+                        </div>
+                      </div>
+                    </card>
+                  </div>
+                </div>
+              </template>
+              <template #content>
+                <v-divider style="margin-bottom: 8px;"></v-divider>
+                <div class="loremipsum">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis.
+                </div>
+                <div class="button">
+                  <primary-button class="modal-button">Register</primary-button>
+                </div>
+              </template>
+            </dropdown>
           </div>
         </div>
-      </card>
-    </div>
-  </div>
-            </template>
-            <template #content>
-              <v-divider style="margin-bottom: 8px;"></v-divider>
-              <div class="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
+      </v-tab>
+
+      <!-- registered events -->
+      <v-tab title="Registered">
+        <!-- card 1 -->
+        <div v-for="event in registeredEvents" :key="event.id">
+          <div class="card-margin">
+            <dropdown>
+              <template #header>
+                <div class="trainings">
+                  <div class="training-container">
+                    <card>
+                      <div class="training-details-wrapper">
+                        <div class="training-details">
+                          <div class="circle"></div>
+                          <p class="training-details-text">
+                            Dutch Masters
+                          </p>
+                          <p>
+                            07 nov 2020, Rotterdam
+                          </p>
+                        </div>
+                      </div>
+                    </card>
+                  </div>
+                </div>
+              </template>
+              <template #content>
+                <v-divider style="margin-bottom: 8px;"></v-divider>
+                <div class="loremipsum">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis.
                 </div>
                 <div class="flex-row">
                   <p>Status:</p>
                   <p class="bold">Registered</p>
-                  
                 </div>
               </template>
-        
-          </dropdown>
-        </div>
-
-
-<!-- card 2 -->
-        <div class="card-margin">
-          <dropdown>
-            <template #header>
-  <div class="trainings">
-    <div class="training-container">
-      <card>
-        <div class="training-details-wrapper">
-          <div class="training-details">
-            <div class="circle"></div>
-            <p class="training-details-text">
-              Bredase kampioenschappen
-            </p>
-            <p >
-              20 nov 2020, Breda
-            </p>
+            </dropdown>
           </div>
-        </div>
-      </card>
-    </div>
-  </div>
-            </template>
-            <template #content>
-              <v-divider style="margin-bottom: 8px;"></v-divider>
-              <div class="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
-                </div>
-                <div class="flex-row">
-                  <p>Status:</p>
-                  <p class="bold">Awaiting confirmation</p>
-                  
-                </div>
-              </template>
-        
-          </dropdown>
-        </div>
-
-
-        <div>
-
         </div>
       </v-tab>
     </vue-tabs>
@@ -234,8 +91,43 @@
 import Dropdown from "../../shared/Dropdown.vue";
 import { VueTabs, VTab } from "vue-nav-tabs";
 import "vue-nav-tabs/themes/vue-tabs.css";
+import EventService from "../../../services/EventService";
+const eventService = new EventService();
+
 export default {
   components: { Dropdown, VueTabs, VTab },
+
+  data() {
+    return {
+      newEvents: [],
+      registeredEvents: [],
+    };
+  },
+  mounted() {
+    console.log("hello");
+    this.getNewEvents();
+    this.getAllEventsWhereAthleteIsParticipating(14);
+  },
+  methods: {
+    getNewEvents() {
+      eventService.getAllEligibleEventsForCurrentUser().then((response) => {
+        if (response.status == 200) {
+          this.newEvents = response.data;
+          console.log(response.data);
+        }
+      });
+    },
+    getAllEventsWhereAthleteIsParticipating(athleteId) {
+      eventService
+        .getAllEventsWhereAthleteIsParticipating(athleteId)
+        .then((response) => {
+          if (response.status == 200) {
+            this.registeredEvents = response.data;
+            console.log(response.data);
+          }
+        });
+    },
+  },
 };
 </script>
 
@@ -270,7 +162,6 @@ p {
   z-index: 5;
   font-weight: 800;
 }
-
 
 .training-details-text {
   z-index: 5;
@@ -349,5 +240,4 @@ p {
 .modal-button {
   margin-top: 16px;
 }
-
 </style>

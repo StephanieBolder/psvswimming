@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="btn-wrapper">
-      <button @click="showModal">Register</button>
+      <button @click="addAthleteToRequest">Register</button>
     </div>
     <modal :show="show" @close="show = false">
       <div class="modal-content">
@@ -31,6 +31,8 @@
 <script>
 import Modal from "../../shared/Modal.vue";
 import PrimaryButton from "../../shared/PrimaryButton.vue";
+import EventService from "../../../services/EventService";
+const eventService = new EventService();
 export default {
   components: {
     PrimaryButton,
@@ -63,9 +65,27 @@ export default {
       },
     };
   },
+  mounted() {
+    this.getEvent();
+  },
   methods: {
     showModal() {
       this.show = true;
+    },
+    addAthleteToRequest() {
+      const eventId = this.$route.params.id;
+      eventService
+        .addAthleteToEventPendingRequests(14, eventId)
+        .then((response) => {
+          console.log(response);
+          this.showModal();
+        });
+    },
+    getEvent() {
+      const eventId = this.$route.params.id;
+      eventService
+        .getEventById(eventId)
+        .then((response) => console.log(response));
     },
   },
 };

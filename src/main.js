@@ -6,6 +6,7 @@ import router from "./router/index";
 //import AuthService from './services/AuthService';
 import { showError, showGenericError } from "./util/modal";
 import VCalendar from "v-calendar";
+import "@/assets/index.css";
 
 import { setupCalendar } from "v-calendar";
 

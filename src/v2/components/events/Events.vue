@@ -16,7 +16,7 @@
           <div class="training-details">
             <div class="circle"></div>
             <div class="test">
-            <p class="training-details-text">
+            <p class="font-bold z-index">
               Dutch Masters
             </p>
             <p class="location-text">

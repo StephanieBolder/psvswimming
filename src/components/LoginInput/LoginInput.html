@@ -4,13 +4,14 @@
       <div class="psvzwemmen_logo_container">
         
       </div>
-      <p class="login_text_header">SIGN IN</p>
+      <p class="login_text_header font-bold"></p>
       <v-text-field v-model="emailInput"
+      class="rounded-lg "
         label="Email"
         required
         outlined
         :rules="emailRules"
-        color="#85CBE6"
+        color="#00000"
       ></v-text-field>
       <v-text-field v-model="passwordInput"
       label="Password"
@@ -20,7 +21,7 @@
       type="password"
       autocomplete="on"
       ></v-text-field>
-      <a router-link="/"><p class="login_text_password">Forgot your password?</p></a>
+      <a router-link="/"><p class="">Forgot your password?</p></a>
       <v-btn v-on:click="authenticate" rounded color="#85CBE6"  class="login_button_container white--text">Sign in</v-btn>
     </form>
   </div>

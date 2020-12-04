@@ -11,7 +11,7 @@ export default {
   props: [],
   data () {
     return {
-      notifications: null,
+      notifications: [{title: "Title", message: "Message"}, {title: "Title", message: "Message"}],
       currentItem: null
     }
   },

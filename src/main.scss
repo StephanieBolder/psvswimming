@@ -4,7 +4,7 @@ $psv-purple: #465195;
 
 $card-light-grey: #fbfbfb;
 $card-grey: #f1f1f1;
-$card-grey-title: #5a5a5a;
+$card-grey-title: #000000;
 $card-grey-description: #5a5a5a;
 
 $card-icon-width: 32px;
@@ -63,9 +63,7 @@ a {
 }
 
 h1 {
-  color: $psv-blue;
   font-size: $font-size-large;
-  margin-bottom: 25px;
 }
 
 .card-base {
@@ -84,6 +82,7 @@ h1 {
 
   grid-template-columns: calc(100% - #{$card-icon-width}) $card-icon-width;
   grid-template-rows: auto;
+  
 
   .event-card__title {
     color: $card-grey-title;
@@ -131,7 +130,7 @@ h1 {
 .event-card-header {
   @extend .card-base;
 
-  background: $card-grey;
+  background: white;
   display: grid;
   margin-top: 16px;
   margin-bottom: -10px;
@@ -139,6 +138,8 @@ h1 {
 
   grid-template-columns: calc(100% - #{$card-icon-width}) $card-icon-width;
   grid-template-rows: auto;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   .event-card-header__title {
     color: $card-grey-title;

@@ -15,10 +15,10 @@
                         <div class="training-details">
                           <div class="circle"></div>
                           <p class="training-details-text">
-                            Dutch Masters
+                            {{event.name}}
                           </p>
                           <p>
-                            27 nov 2020, Eindhoven
+                            27 nov 2020, {{event.location}}
                           </p>
                         </div>
                       </div>
@@ -29,9 +29,7 @@
               <template #content>
                 <v-divider style="margin-bottom: 8px;"></v-divider>
                 <div class="loremipsum">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis.
+                  {{event.description}}
                 </div>
                 <div class="button">
                   <primary-button class="modal-button">Register</primary-button>
@@ -99,7 +97,7 @@ export default {
 
   data() {
     return {
-      newEvents: [],
+      newEvents: [{name: 'Dutch masters', location: "Eindhoven", description:"Lorem Ipsum"},{name: 'Wemeldinge masters', location: "Wemeldinge", description:"Lorem Ipsum"},{name: 'Dutch masters', location: "Eindhoven", description:"Lorem Ipsum"}],
       registeredEvents: [],
     };
   },

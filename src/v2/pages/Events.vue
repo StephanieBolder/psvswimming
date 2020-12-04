@@ -9,11 +9,6 @@
 <script>
 import Events from "../components/events/Events.vue";
 import EventsHeader from "../components/events/EventsHeader.vue";
-<<<<<<< HEAD
-import TopNav from "../shared/TopNav.vue";
-export default {
-  components: { Events, EventsHeader, TopNav },
-=======
 import EventService from "../../services/EventService";
 const eventService = new EventService();
 export default {
@@ -37,7 +32,6 @@ export default {
       });
     },
   },
->>>>>>> api-integration
 };
 </script>
 

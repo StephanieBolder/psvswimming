@@ -5,7 +5,7 @@ import Logout from "../components/Logout/index";
 import MeetsOverview from "../components/MeetsOverview/index";
 import Meet from "../components/Meet/index";
 import Dashboard from "../components/Dashboard/index";
-import Profile from "../v2/pages/Profile";
+import Profile from "../components/Profile";
 import Settings from "../components/Settings/index";
 import UserRegister from "../components/UserRegister/index";
 import MeetsRegister from "../components/MeetsRegister/index";
@@ -24,7 +24,7 @@ import TrainingCreate from "../components/TrainingCreate/index";
 import Events from "../v2/pages/Events";
 import EventRegistration from "../v2/pages/EventRegistration";
 import Information from "../v2/pages/Information";
-import Notifications from "../v2/pages/Notifications";
+import Notifications from "../components/Notifications";
 
 Vue.use(Router);
 

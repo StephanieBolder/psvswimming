@@ -1,29 +1,31 @@
-import Axios from "axios"
+import Axios from "axios";
 
 export default class EventService {
+  getAllEligibleEventsForCurrentUser() {
+    return Axios.get("/event");
+  }
 
-    getEventById(eventId) {
-        return Axios.get('/event/' + eventId);
-    }
-    
-    getEventsFromSession(sessionId) {
-        return Axios.get('/event/session/' + sessionId);
-    }
+  getEventById(eventId) {
+    return Axios.get("/event/" + eventId);
+  }
 
-    addAthleteToEventRequests(athleteId, eventId) {
-        return Axios.post('/event/request/' + eventId + "/athlete/" + athleteId);
-    }
+  getAllEventsWhereAthleteIsParticipating(athleteId) {
+    return Axios.get(`/event/athlete/${athleteId}/participating`);
+  }
 
-    removeAthleteFromEventRequests(athleteId, eventId) {
-        return Axios.delete('/event/request/' + eventId + "/athlete/" + athleteId);
-    }
+  addAthleteToEventPendingRequests(athleteId, eventId) {
+    return Axios.post(`/event/request/${eventId}/athlete/${athleteId}`);
+  }
 
-    addAthleteToEventParticipants(athleteId, eventId) {
-        return Axios.post('/event/approve/' + eventId + "/athlete/" + athleteId);
-    }
+  removeAthleteFromEventPendingRequests(athleteId, eventId) {
+    return Axios.delete(`/event/request/${eventId}/athlete/${athleteId}`);
+  }
 
-    removeAthleteFromEventParticipants(athleteId, eventId) {
-        return Axios.delete('/event/reject/' + eventId + "/athlete/" + athleteId);
-    }
-    
+  addAthleteToEventParticipants(athleteId, eventId) {
+    return Axios.post(`/event/approve/${eventId}/athlete/${athleteId}`);
+  }
+
+  removeAthleteFromEventParticipants(athleteId, eventId) {
+    return Axios.delete(`/event/reject/${eventId}/athlete/${athleteId}`);
+  }
 }

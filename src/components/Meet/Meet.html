@@ -1,12 +1,13 @@
 <div>
   <section class="meet container">
-    <TopNavigation module="meets"></TopNavigation>
-    <h1>Meet</h1>
-    <div class="event-card-header" v-if="meet != null">
-      <p class="event-card-header__title">{{meet.name}}</p>
+
+    <h1 class="font-bold ">Meet</h1>
+    <h3 class="font-light">Check meets and register</h3>
+    <div class="event-card-header">
+      <p class="event-card-header__title"> {{meet.name}} </p>
       <p class="event-card-header__description">{{('0' + meet.entryStartDate[2]).slice(-2)}}/{{('0' + meet.entryStartDate[1]).slice(-2)}}/{{meet.entryStartDate[0]}}</p>
     </div>
-    <div class="event-card" v-if="meet != null">
+    <div class="event-card">
       <div>
         <div v-for="session in meet.sessions">
           <div v-for="event in session.events">
@@ -17,7 +18,7 @@
                 </div>
                 <div class="event-action-buttons-container">
                   <div class="event-action-button" v-if="event.pendingRequests.includes(athleteId) && !event.athleteParticipants.includes(athleteId)">
-                    <!-- REQUEST IS STILL BEING REVIEWED -->
+                     <!-- REQUEST IS STILL BEING REVIEWED -->
                     <v-icon>mdi-clock-outline</v-icon>
                   </div>
                   <div v-on:click="addAthleteToEventRequests(athleteId, event.appId)" class="event-action-button" v-if="!event.pendingRequests.includes(athleteId) && !event.athleteParticipants.includes(athleteId)">
@@ -33,7 +34,7 @@
                     <v-icon>mdi-calendar-check</v-icon>
                   </div>
                   <div v-on:click="removeAthleteFromEventParticipants(athleteId, event.appId)" class="event-action-button" v-if="!event.pendingRequests.includes(athleteId) && event.athleteParticipants.includes(athleteId)">
-                    <!-- APPROVED SWIMMER WANTS TO WITHDRAW FROM THE EVENT -->
+                     <!-- APPROVED SWIMMER WANTS TO WITHDRAW FROM THE EVENT -->
                     <v-icon class="event-action-error">mdi-cancel</v-icon>
                   </div>
                 </div>

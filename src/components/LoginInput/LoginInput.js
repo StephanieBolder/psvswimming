@@ -1,33 +1,32 @@
-import AuthService from '../../services/AuthService'
-import router from './../../router/index';
+import AuthService from "../../services/AuthService";
+import router from "./../../router/index";
 
 var authService = new AuthService();
 
 export default {
-  name: 'login-input',
+  name: "login-input",
   components: {},
   props: [],
-  data () {
+  data() {
     return {
-      emailInput: '',
-      passwordInput: '',
-      emailRules: [ v => /.+@.+/.test(v) || 'Invalid Email address' ]
-    }
+      emailInput: "swimmer@psv.nl",
+      passwordInput: "KDaJpSGN",
+      emailRules: [(v) => /.+@.+/.test(v) || "Invalid Email address"],
+    };
   },
-  computed: {
-
-  },
-  mounted () {
-
-  },
+  computed: {},
+  mounted() {},
   methods: {
     authenticate() {
-      authService.authenticate(this.emailInput, this.passwordInput).then(response => {
-          localStorage.setItem("access_token", response.data);
+      authService
+        .authenticate(this.emailInput, this.passwordInput)
+        .then((response) => {
+          const { id, username, email, role } = response.data;
+          localStorage.setItem("access_token", response.data.token);
+          localStorage.setItem("id", id);
+          this.$store.commit("setUser", { id, username, email, role });
           router.push("/");
-      });
-    }
-  }
-}
-
-
+        });
+    },
+  },
+};

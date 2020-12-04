@@ -24,3 +24,13 @@
 .event-action-error {
     color: $psv-red;
 }
+
+.circle {
+    margin-left: -16px;
+    position: absolute;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 2000px;
+    background: linear-gradient(#daf4ff, #f4fafd);
+  }

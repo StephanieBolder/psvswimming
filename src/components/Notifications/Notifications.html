@@ -1,15 +1,19 @@
 <section class="notifications">
   <TopNavigation></TopNavigation>
   <div>
-    <h1>Notification details</h1>
-    <div class="event-card">
+    <div class=""></div>
+    <h1 class="mt-12 ml-12">Notifications</h1>
+    <div v-for="notification in notifications" v:key="notification.title">
+      <div class="event-card">
         <div class="event-card__title">
-            {{notifications.title}}
+            {{notification.title}}
         </div>
         <div class="event-card__description">
-            {{notifications.message}}
+            {{notification.message}}
         </div>
     </div>
+    </div>
+    
   </div>
 </section>
 

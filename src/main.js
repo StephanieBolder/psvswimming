@@ -1,18 +1,19 @@
+import Vuex from "vuex";
 import Vue from "vue";
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 import axios from "axios";
 import router from "./router/index";
-//import AuthService from './services/AuthService';
+import AuthService from "./services/AuthService";
 import { showError, showGenericError } from "./util/modal";
 import VCalendar from "v-calendar";
 import "@/assets/index.css";
 
 import { setupCalendar } from "v-calendar";
 
-//import UserService from './services/UserService';
+import UserService from "./services/UserService";
 
-/* var authService = new AuthService();
+var authService = new AuthService();
 var userService = new UserService();
 
 //ROUTE AUTH CONFIGURATION
@@ -27,7 +28,7 @@ var adminBlacklistedRoutes = [
   "eventrequests",
   "trainingCreate",
   "trainingid",
-  "training"
+  "training",
 ];
 
 //All route names which a coach may not access (see /router/index.js).
@@ -39,7 +40,7 @@ var coachBlacklistedRoutes = [
   "meetrequests",
   "meethistory",
   "meets",
-  "notificationsCreate"
+  "notificationsCreate",
 ];
 
 //All route names which a swimmer may not access (see /router/index.js).
@@ -52,8 +53,8 @@ var swimmerBlacklistedRoutes = [
   "eventrequests",
   "trainingCreate",
   "trainingid",
-  "training"
-] */
+  "training",
+];
 
 const apiUrl = "http://localhost:5000";
 
@@ -103,71 +104,85 @@ axios.interceptors.response.use(
 
 //CHECK IF THE USER IS AUTHORIZED BEFORE SWITCHING BETWEEN COMPONENTS
 /* router.beforeEach((to, from, next) => {
-
-  if(to.name == 'logout') {
-    if(localStorage.getItem("access_token") != null) {
+  if (to.name == "logout") {
+    if (localStorage.getItem("access_token") != null) {
       localStorage.removeItem("access_token");
     }
-    next({name: 'login'});
-  }else if(to.name == 'login') {
-    if(localStorage.getItem("access_token") == null) {
+    next({ name: "login" });
+  } else if (to.name == "login") {
+    if (localStorage.getItem("access_token") == null) {
       next();
-    }else{
-      next({name: 'dashboard'});
+    } else {
+      next({ name: "dashboard" });
     }
-  }else{
-    authService.isAuthorized().then(authResponse => {
+  } else {
+    authService.isAuthorized().then((authResponse) => {
       //Auth error
-      if(authResponse.error != null) {
-        if(from.name !== "login") {
-            showError("Your session has expired. Please login again.").then(() => {
-            next({name: 'login'});
-          });
+      if (authResponse.error != null) {
+        if (from.name !== "login") {
+          showError("Your session has expired. Please login again.").then(
+            () => {
+              next({ name: "login" });
+            }
+          );
         }
       }
       //Auth success
-      else{
-        if(authResponse.data != null && authResponse.data !== "") {
+      else {
+        if (authResponse.data != null && authResponse.data !== "") {
           var params = to.params;
           params["userId"] = authResponse.data;
-          userService.getUserById(authResponse.data).then(userResponse => {
-            if(userResponse.data != null && userResponse.data !== "") {
-              if(userResponse.data.roleType === "SWIMMER") {
-                if(swimmerBlacklistedRoutes.includes(to.name)) {
-                  next({name: 'dashboard'});
-                }else{
+          userService.getUserById(authResponse.data).then((userResponse) => {
+            if (userResponse.data != null && userResponse.data !== "") {
+              if (userResponse.data.roleType === "SWIMMER") {
+                if (swimmerBlacklistedRoutes.includes(to.name)) {
+                  next({ name: "dashboard" });
+                } else {
                   next();
                 }
-              }else if(userResponse.data.roleType === "COACH") {
-                if(coachBlacklistedRoutes.includes(to.name)) {
-                  next({name: 'dashboard'});
-                }else{
+              } else if (userResponse.data.roleType === "COACH") {
+                if (coachBlacklistedRoutes.includes(to.name)) {
+                  next({ name: "dashboard" });
+                } else {
                   next();
                 }
-              }else if(userResponse.data.roleType === "ADMIN") {
-                if(adminBlacklistedRoutes.includes(to.name)) {
-                  next({name: 'dashboard'});
-                }else{
+              } else if (userResponse.data.roleType === "ADMIN") {
+                if (adminBlacklistedRoutes.includes(to.name)) {
+                  next({ name: "dashboard" });
+                } else {
                   next();
                 }
               }
             }
-          })
-        }else{
-          next({name: 'login'});
+          });
+        } else {
+          next({ name: "login" });
         }
       }
     });
   }
-});
- */
+}); */
+
 //BOOT THE VUE APP
 Vue.prototype.$http = axios;
 Vue.config.productionTip = false;
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+  state: {
+    user: {},
+  },
+  mutations: {
+    setUser(state, user) {
+      state.user = user;
+    },
+  },
+});
 
 new Vue({
   App,
   router: router,
+  store,
   vuetify,
   VCalendar,
 

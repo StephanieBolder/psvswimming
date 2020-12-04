@@ -1,23 +1,21 @@
-import Axios from "axios"
+import Axios from "axios";
 
 export default class AuthService {
-
-    isAuthorized() {
-      let promise = Axios.get('/authorize')
-      .then(response => {
+  isAuthorized() {
+    let promise = Axios.get("/user/roleData")
+      .then((response) => {
         return response;
       })
       .catch(() => {
         return null;
-      })
-      return promise;
-    }
+      });
+    return promise;
+  }
 
-    authenticate(emailInput, passwordInput) {
-        return Axios.post('/authenticate', {
-          email: emailInput,
-          password: passwordInput
-        });
-    }
-
+  authenticate(emailInput, passwordInput) {
+    return Axios.post("/authenticate", {
+      email: emailInput,
+      password: passwordInput,
+    });
+  }
 }

@@ -25,6 +25,7 @@ import Events from "../v2/pages/Events";
 import EventRegistration from "../v2/pages/EventRegistration";
 import Information from "../v2/pages/Information";
 import Notifications from "../components/Notifications";
+import MeetCreate from "../components/MeetCreate;"
 
 Vue.use(Router);
 
@@ -50,6 +51,11 @@ export default new Router({
       path: "/meet/:meetId",
       name: "meet",
       component: Meet,
+    },
+    { 
+      path: "/meet/create",
+      name: "meetCreate",
+      component: MeetCreate
     },
     {
       path: "/profile",

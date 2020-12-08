@@ -9,6 +9,8 @@ export default class EventService {
     return Axios.get("/event/" + eventId);
   }
 
+
+  //same as in athlete service
   getAllEventsWhereAthleteIsParticipating(athleteId) {
     return Axios.get(`/event/athlete/${athleteId}/participating`);
   }

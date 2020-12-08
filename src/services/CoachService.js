@@ -1,8 +1,8 @@
 import Axios from "axios";
 
 export default class CoachService {
-  getCoachById(coachId) {
-    return Axios.get("/coach/" + coachId);
+  getCoachById(userId) {
+    return Axios.get("/coach/" + userId);
   }
 
   getAthletesByCoach(userId) {

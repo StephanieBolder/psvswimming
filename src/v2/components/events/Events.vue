@@ -5,20 +5,21 @@
       <v-tab title="New">
         <!-- card 1 -->
         <div v-for="event in newEvents" :key="event.id">
-          <div class="card-margin">
+          <div class="flex justify-center">
+          <div class="card-margin w-10/12 ">
             <dropdown>
               <template #header>
                 <div class="trainings">
                   <div class="training-container">
-                    <card>
+                    <card class="">
                       <div class="training-details-wrapper">
                         <div class="training-details">
                           <div class="circle"></div>
-                          <p class="training-details-text">
+                          <p class="font-bold z-10 text-lg">
                             {{event.name}}
                           </p>
-                          <p>
-                            27 nov 2020, {{event.location}}
+                          <p class="font-light">
+                            {{event.date}}
                           </p>
                         </div>
                       </div>
@@ -28,8 +29,11 @@
               </template>
               <template #content>
                 <v-divider style="margin-bottom: 8px;"></v-divider>
-                <div class="loremipsum">
-                  {{event.description}}
+                <div class="">
+                  {{event.location}} 
+                </div>
+                <div class="">
+                 Deadline: {{event.deadline}}
                 </div>
                 <div class="button">
                   <primary-button class="modal-button">Register</primary-button>
@@ -37,6 +41,7 @@
               </template>
             </dropdown>
           </div>
+        </div>
         </div>
       </v-tab>
 
@@ -90,6 +95,8 @@ import Dropdown from "../../shared/Dropdown.vue";
 import { VueTabs, VTab } from "vue-nav-tabs";
 import "vue-nav-tabs/themes/vue-tabs.css";
 import EventService from "../../../services/EventService";
+
+
 const eventService = new EventService();
 
 export default {
@@ -97,7 +104,7 @@ export default {
 
   data() {
     return {
-      newEvents: [{name: 'Dutch masters', location: "Eindhoven", description:"Lorem Ipsum"},{name: 'Wemeldinge masters', location: "Wemeldinge", description:"Lorem Ipsum"},{name: 'Dutch masters', location: "Eindhoven", description:"Lorem Ipsum"}],
+      newEvents: [{name: 'Dutch masters', date: "20 - 23 nov", location: "Eindhoven", deadline:"12 november"},{name: 'Wemeldinge masters', date: "16 -19 dec", location: "Wemeldinge", deadline:"11 december"},{name: 'Dutch masters', date: "12-18 jan", location: "Eindhoven", deadline:"2 januari"}],
       registeredEvents: [],
     };
   },
@@ -149,7 +156,7 @@ export default {
 }
 
 .active {
-  border-bottom: 2px solid #707070;
+  border-bottom: 3px solid #E3322C;
 }
 
 p {

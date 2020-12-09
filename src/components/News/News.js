@@ -1,9 +1,9 @@
-import TopNavigation from './../TopNavigation/index'
+// import TopNavigation from './../TopNavigation/index'
 
 export default {
   name: 'news',
   components: {
-    TopNavigation
+    // TopNavigation
   },
   props: [],
   data () {

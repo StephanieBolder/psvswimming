@@ -1,6 +1,6 @@
 import TrainingService from '../../services/TrainingService'
 import UserService from '../../services/UserService'
-import TopNavigation from './../TopNavigation/index'
+// import TopNavigation from './../TopNavigation/index'
 
 var trainingService = new TrainingService();
 var userService = new UserService();
@@ -8,7 +8,7 @@ var userService = new UserService();
 export default {
   name: 'training',
   components: {
-    TopNavigation
+    // TopNavigation
   },
   props: [],
   data () {

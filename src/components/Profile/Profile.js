@@ -1,17 +1,31 @@
-import TopNavigation from './../TopNavigation/index'
 import UserService from './../../services/UserService'
+import { VueTabs, VTab } from "vue-nav-tabs";
+import "vue-nav-tabs/themes/vue-tabs.css";
+import Training from "./Training.vue";
+import Agenda from "./Agenda.vue";
+import Statistics from "./Statistics.vue";
+import Dropdown from "../shared/Dropdown.vue";
+import TopNavRight from "../shared/TopNavRight.vue";
 
 var userService = new UserService();
 
 export default {
   name: 'profile',
   components: {
-    TopNavigation
+    TopNavRight,
+    VueTabs,
+    VTab,
+    Training,
+    Agenda,
+    Statistics,
+    Dropdown,
   },
   props: [],
   data () {
     return {
-      user: null
+      users: [
+        { id: 1, firstname: "John", lastname: "Doe" },
+      ],
     }
   },
   computed: {

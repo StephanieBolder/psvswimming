@@ -1,9 +1,9 @@
-import TopNavigation from './../TopNavigation'
+// import TopNavigation from './../TopNavigation'
 
 export default {
   name: 'swimmers-overview',
   components: {
-    TopNavigation
+    // TopNavigation
   },
   props: [],
   data () {

@@ -1,4 +1,4 @@
-import TopNavigation from './../TopNavigation/index'
+// import TopNavigation from './../TopNavigation/index'
 import UserService from './../../services/UserService'
 
 var userService = new UserService();
@@ -6,7 +6,7 @@ var userService = new UserService();
 export default {
   name: 'dashboard',
   components: {
-    TopNavigation
+    // TopNavigation
   },
   props: [],
   data () {

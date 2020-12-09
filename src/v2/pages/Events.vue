@@ -10,9 +10,10 @@
 import Events from "../components/events/Events.vue";
 import EventsHeader from "../components/events/EventsHeader.vue";
 import EventService from "../../services/EventService";
+
 const eventService = new EventService();
 export default {
-  components: { Events, EventsHeader },
+  components: { Events, EventsHeader},
   data() {
     return {
       events: [],

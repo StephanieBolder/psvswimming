@@ -1,5 +1,5 @@
 import NotificationService from '../../services/NotificationService';
-import TopNavigation from './../TopNavigation/index'
+// import TopNavigation from './../TopNavigation/index'
 import UserService from '../../services/UserService';
 
 var userService = new UserService();
@@ -8,7 +8,7 @@ var notificationService = new NotificationService();
 export default {
   name: 'notificationsCreate',
   components: {
-    TopNavigation
+    // TopNavigation
   },
   props: [],
   data () {

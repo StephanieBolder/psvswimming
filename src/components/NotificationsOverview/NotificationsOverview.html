@@ -1,6 +1,6 @@
 <div>
   <section class="container">
-    <TopNavigation module="media"></TopNavigation>
+    <!-- <TopNavigation module="media"></TopNavigation> -->
     <h1>My notifications</h1> 
       <div v-for="notification in notifications">
         <router-link :to="{ name: 'notifications', params: {notificationId:notification.appId}}">

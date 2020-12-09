@@ -2,7 +2,7 @@
   <div class="app" id="app">
     <v-app>
       <router-view class="app_content"></router-view>
-      <!-- <bottom-nav /> -->
+      <bottom-nav />
     </v-app>
     <div class="modal micromodal-slide" id="modal" aria-hidden="true">
       <div class="modal__overlay" tabindex="-1" data-micromodal-close>

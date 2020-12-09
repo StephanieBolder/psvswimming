@@ -1,4 +1,4 @@
-import TopNavigation from '../TopNavigation'
+// import TopNavigation from '../TopNavigation'
 import UserService from '../../services/UserService'
 import AthleteService from '../../services/AthleteService'
 import MeetService from '../../services/MeetService';
@@ -12,7 +12,7 @@ var meetService = new MeetService();
 export default {
   name: 'event-requests-overview',
   components: {
-    TopNavigation
+    // TopNavigation
   },
   props: [],
   data () {

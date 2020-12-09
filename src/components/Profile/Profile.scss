@@ -50,3 +50,13 @@ $profile-picture-size: 4em;
     color: white;
   }
 }
+
+.nav-tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.v-application .title {
+  font-weight: 100 !important;
+  font-size: 16px !important;
+}

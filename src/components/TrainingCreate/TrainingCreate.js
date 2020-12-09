@@ -1,11 +1,11 @@
 import TrainingService from '../../services/TrainingService';
-import TopNavigation from './../TopNavigation/index'
+// import TopNavigation from './../TopNavigation/index'
 
 var trainingService = new TrainingService();
 export default {
   name: 'trainingCreate',
   components: {
-    TopNavigation
+    // TopNavigation
   },
   props: [],
   data () {

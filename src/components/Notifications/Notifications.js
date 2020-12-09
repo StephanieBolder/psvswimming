@@ -1,17 +1,17 @@
 import NotificationService from '../../services/NotificationService';
-import TopNavigation from './../TopNavigation/index'
+import TopNavLeft from "../shared/TopNavLeft.vue";
 
 var notificationService = new NotificationService();
 
 export default {
   name: 'notifications',
   components: {
-    TopNavigation
+    TopNavLeft
   },
   props: [],
   data () {
     return {
-      notifications: [{title: "Title", message: "Message"}, {title: "Title", message: "Message"}],
+      notifications: [{title: "Pictures of the PSV Swimmers", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.", date: "Yesterday"}, {title: "Pictures of the PSV Swimmers", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.", date: "01-12-2020"}, {title: "Pictures of the PSV Swimmers", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.", date: "Yesterday"}, {title: "Pictures of the PSV Swimmers", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.", date: "01-12-2020"}],
       currentItem: null
     }
   },

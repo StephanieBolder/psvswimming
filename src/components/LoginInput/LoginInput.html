@@ -4,25 +4,11 @@
       <div class="psvzwemmen_logo_container">
         
       </div>
-      <p class="login_text_header font-bold"></p>
-      <v-text-field v-model="emailInput"
-      class="rounded-lg "
-        label="Email"
-        required
-        outlined
-        :rules="emailRules"
-        color="#00000"
-      ></v-text-field>
-      <v-text-field v-model="passwordInput"
-      label="Password"
-      required
-      outlined
-      color="#85CBE6"
-      type="password"
-      autocomplete="on"
-      ></v-text-field>
-      <a router-link="/"><p class="">Forgot your password?</p></a>
-      <v-btn v-on:click="authenticate" rounded color="#85CBE6"  class="login_button_container white--text">Sign in</v-btn>
+      <p class="login_text_header "></p>
+      
+     
+
+      
     </form>
   </div>
   <!-- DELETE IN FINAL DELIVERY -->
@@ -39,4 +25,45 @@
     </p>
     -->
   </v-card>
+
+
+
+
+  <div class="ml-16 md:ml-24 lg:ml-32 ">
+
+
+  <div class="text-xl font-bold mt-4 ">Login</div>
+    <div class="bg-red-400 z-40 -mt-2.5 py-1 w-14 "></div> 
+
+    <div class="mt-12 w-10/12 ">
+<v-text-field v-model="emailInput"
+      class="rounded-lg "
+        label="Email"
+        required
+        outlined
+        :rules="emailRules"
+        color="#00000"
+      ></v-text-field>
+
+ <v-text-field v-model="passwordInput"
+      label="Password"
+      required
+      outlined
+      color="#85CBE6"
+      type="password"
+      autocomplete="on"
+      ></v-text-field>
+
+      <router-link :to="{ name: 'resetpassword' }">
+        <p alt="" class="float-right text-gray-400 font-light -mt-4 text-sm  ">Forgot your password?</p>
+      </router-link>
+
+      <button v-on:click="authenticate" class="login_button_container bg-black text-white py-2 rounded-sm mt-12 ">Sign in</button>
+
+      <router-link :to="{ name: 'onboarding' }"><p class="text-gray-400 font-light text-sm mt-4 text-center ">Don't have an account yet? <b class="text-black">Register</b></p></router-link>
+    </div>
+
+
+
+  </div>
 </div>

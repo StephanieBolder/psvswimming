@@ -1,8 +1,8 @@
-import TopNavigation from './../TopNavigation/index'
+// import TopNavigation from './../TopNavigation/index'
 
 export default {
   name: 'meets-register',
-  components: { TopNavigation},
+  components: { },
   props: [],
   data () {
     return {

@@ -1,12 +1,12 @@
 import AthleteService from './../../services/AthleteService';
-import TopNavigation from './../TopNavigation'
+// import TopNavigation from './../TopNavigation'
 
 var athleteService = new AthleteService();
 
 export default {
   name: 'athlete-participated-events',
   components: {
-    TopNavigation
+    // TopNavigation
   },
   props: [],
   data () {

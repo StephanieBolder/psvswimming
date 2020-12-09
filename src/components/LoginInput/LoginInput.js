@@ -11,7 +11,7 @@ export default {
     return {
       emailInput: "swimmer@psv.nl",
       passwordInput: "KDaJpSGN",
-      emailRules: [(v) => /.+@.+/.test(v) || "Invalid Email address"],
+      emailRules: [(v) => /.+@.+/.test(v) || "Invalid Email address"],zz
     };
   },
   computed: {},

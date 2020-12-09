@@ -1,4 +1,4 @@
-import TopNavigation from './../TopNavigation/index'
+// import TopNavigation from './../TopNavigation/index'
 import NewsService from "../../services/NewsService";
 
 const newsService = new NewsService();
@@ -6,7 +6,7 @@ const newsService = new NewsService();
 export default {
   name: 'news-create',
   components: {
-    TopNavigation
+    // TopNavigation
   },
   props: [],
   data () {

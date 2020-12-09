@@ -1,6 +1,6 @@
 import MeetService from './../../services/MeetService';
 
-import TopNavigation from './../TopNavigation/index'
+// import TopNavigation from './../TopNavigation/index'
 import AthleteParticipatedEvents from './../AthleteParticipatedEvents/index'
 import AthleteRequestedEvents from './../AthleteRequestedEvents/index'
 import AthleteApprovedEvents from "../AthleteApprovedEvents/index";
@@ -10,7 +10,7 @@ var meetService = new MeetService();
 export default {
   name: 'meets-overview',
   components: {
-    TopNavigation,
+    // TopNavigation,
     AthleteParticipatedEvents,
     AthleteRequestedEvents,
     AthleteApprovedEvents

@@ -1,4 +1,4 @@
-import TopNavigation from '../TopNavigation'
+// import TopNavigation from '../TopNavigation'
 import UserService from "../../services/UserService";
 import {showMessage} from "../../util/modal";
 
@@ -7,7 +7,7 @@ const userService = new UserService();
 export default {
   name: 'user-register',
   components: {
-    TopNavigation
+    // TopNavigation
   },
   props: [],
   data () {

@@ -26,6 +26,7 @@ import EventRegistration from "../v2/pages/EventRegistration";
 import Information from "../v2/pages/Information";
 import Notifications from "../components/Notifications";
 import MeetCreate from "../components/MeetCreate"
+import ResetPassword from "../components/ResetPassword";
 
 Vue.use(Router);
 
@@ -132,6 +133,11 @@ export default new Router({
       path: "/events",
       name: "events",
       component: Events,
+    },
+    {
+      path: "/resetpassword",
+      name: "resetpassword",
+      component: ResetPassword,
     },
     {
       path: "/information",

@@ -1,9 +1,9 @@
-import TopNavigation from './../TopNavigation/index'
+// import TopNavigation from './../TopNavigation/index'
 
 export default {
   name: 'settings',
   components: {
-    TopNavigation
+    // TopNavigation
   },
   props: [],
   data () {

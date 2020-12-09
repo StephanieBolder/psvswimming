@@ -7,7 +7,7 @@
       <agenda />
     </v-tab>
     <v-tab title="Statistics">
-      Statistics
+      <statistics />
     </v-tab>
   </vue-tabs>
 </template>
@@ -17,12 +17,15 @@ import { VueTabs, VTab } from "vue-nav-tabs";
 import "vue-nav-tabs/themes/vue-tabs.css";
 import Training from "./Training.vue";
 import Agenda from "./Agenda.vue";
+import Statistics from "./Statistics.vue";
+
 export default {
   components: {
     VueTabs,
     VTab,
     Training,
     Agenda,
+    Statistics,
   },
 };
 </script>

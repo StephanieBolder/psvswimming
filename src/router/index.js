@@ -27,6 +27,8 @@ import Information from "../v2/pages/Information";
 import Notifications from "../components/Notifications";
 import MeetCreate from "../components/MeetCreate"
 import ResetPassword from "../components/ResetPassword";
+import Register from "../components/Register";
+import Checkmail from "../components/Checkmail";
 
 Vue.use(Router);
 
@@ -138,6 +140,18 @@ export default new Router({
       path: "/resetpassword",
       name: "resetpassword",
       component: ResetPassword,
+    },
+    { path: "/register",
+      name: "register",
+      component: Register,
+    },
+    { path: "/eventregistration",
+      name: "eventregistration",
+      component: EventRegistration,
+    },
+    { path: "/checkmail",
+      name: "checkmail",
+      component: Checkmail,
     },
     {
       path: "/information",

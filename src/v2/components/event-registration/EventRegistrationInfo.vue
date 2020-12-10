@@ -1,12 +1,14 @@
 <template>
   <div class="event-wrapper">
     <div class="eventmeta-wrapper">
-      <div class="circle"></div>
       <p class="event-name">{{ event.name }}</p>
       <p>{{ event.date }}, {{ event.location }}</p>
     </div>
     <p class="eventinfo-wrapper">
       {{ event.info }}
+    </p>
+    <p class="">
+      Deadline: {{ event.deadline }}
     </p>
   </div>
 </template>
@@ -17,9 +19,10 @@ export default {
     return {
       event: {
         name: "Dutch masters",
-        date: new Date().toLocaleDateString(),
+        date: "20 - 23 nov",
         location: "Eindhoven",
         info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
+        deadline: "12 november",
       },
     };
   },

@@ -29,14 +29,19 @@
               </template>
               <template #content>
                 <v-divider style="margin-bottom: 8px;"></v-divider>
-                <div class="">
-                  {{event.location}} 
+                <div class="ml-6">
+                  {{event.location}}
                 </div>
-                <div class="">
+                <div class="font-light mt-2 mx-6">
+                  {{event.info}} 
+                </div>
+                <div class="mt-2 ml-6">
                  Deadline: {{event.deadline}}
                 </div>
                 <div class="button">
-                  <primary-button class="modal-button">Register</primary-button>
+                  <router-link :to="{ name: 'eventregistration' }">
+                  <button class=" bg-black text-white py-2 rounded-md py-2 mt-4 w-40">Register</button>
+                  </router-link>
                 </div>
               </template>
             </dropdown>
@@ -97,14 +102,15 @@ import "vue-nav-tabs/themes/vue-tabs.css";
 import EventService from "../../../services/EventService";
 
 
+
 const eventService = new EventService();
 
 export default {
-  components: { Dropdown, VueTabs, VTab },
+  components: { Dropdown, VueTabs, VTab,  },
 
   data() {
     return {
-      newEvents: [{name: 'Dutch masters', date: "20 - 23 nov", location: "Eindhoven", deadline:"12 november"},{name: 'Wemeldinge masters', date: "16 -19 dec", location: "Wemeldinge", deadline:"11 december"},{name: 'Dutch masters', date: "12-18 jan", location: "Eindhoven", deadline:"2 januari"}],
+      newEvents: [{name: 'Dutch masters', date: "20 - 23 nov", info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.", location: "Eindhoven", deadline:"12 november"},{name: 'Wemeldinge masters', date: "16 -19 dec", info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.", location: "Wemeldinge", deadline:"11 december"},{name: 'Dutch masters', date: "12-18 jan", info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.", location: "Eindhoven", deadline:"2 januari"}],
       registeredEvents: [],
     };
   },

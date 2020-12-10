@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-16 ">
+    <div class="mt-32 ">
         <div class="flex justify-center">
             <img class="w-6/12 " src="@/assets/resetpassword.png" alt="" />
         </div>
@@ -24,9 +24,10 @@
         color="#00000"
       ></v-text-field>
 
-<button v-on:click="authenticate" class=" bg-black text-white py-2 rounded-md mt-12 py-3 ">Reset password</button>
+<router-link :to="{ name: 'checkmail' }">
+<button v-on:click="authenticate" class=" bg-black text-white py-2 rounded-md mt-12 py-3 w-full">Reset password</button></router-link>
 
-      <router-link :to="{ name: 'registration' }"><p class="text-gray-400 font-light text-sm mt-4 text-center ">Don't have an account yet? <b class="text-black">Register</b></p></router-link>
+      <router-link :to="{ name: 'register' }"><p class="text-gray-400 font-light text-sm mt-4 text-center ">Don't have an account yet? <b class="text-black">Register</b></p></router-link>
 
 </div>
     </div>

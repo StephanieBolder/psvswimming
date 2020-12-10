@@ -2,8 +2,10 @@
   <form v-on:submit.prevent class="form">
     <div class="wrapper" v-for="part in event.parts" :key="part.id">
       <div class="distance-container">
+        <p class="font-bold"> {{part.date}}</p>
         <div v-for="(distance, i) in part.distances" :key="i">
           <div class="distance">
+            
             <p>{{ part.name }}</p>
             <p>
               {{ distance }}
@@ -14,16 +16,16 @@
       </div>
     </div>
     <div class="btn-wrapper">
-      <button @click="addAthleteToRequest">Register</button>
+      <button class="bg-black text-white py-2 rounded-md py-2 mt-1 mb-8 w-40" @click="addAthleteToRequest">Register</button>
     </div>
     <modal :show="show" @close="show = false">
       <div class="modal-content">
-        <h3 class="modal-header">
+        <h3 class="modal-header font-bold text-2xl mt-8">
           Registration complete!
         </h3>
-        <p>Your registration is complete, await for further updates!</p>
+        <p class="font-light mt-4">Your registration is complete, await for further updates!</p>
         <router-link :to="{ name: 'events' }">
-                <button class="modal-button">Continue</button>
+                <button class="modal-button bg-black text-white py-2 rounded-md py-2 mt-4 w-40 ">Continue</button>
               </router-link>
       </div>
     </modal>
@@ -50,17 +52,26 @@ export default {
         parts: [
           {
             id: 1,
+            date: "20 november",
             name: "Breaststroke",
             distances: ["500m", "100m", "200m"],
           },
           {
             id: 2,
+            date: "21 november",
             name: "Backstroke",
             distances: ["500m", "100m", "200m"],
           },
           {
             id: 3,
+            date: "22 november",
             name: "Sidestroke",
+            distances: ["500m", "100m", "200m"],
+          },
+          {
+            id: 4,
+            date: "23 november",
+            name: "Backstroke",
             distances: ["500m", "100m", "200m"],
           },
         ],

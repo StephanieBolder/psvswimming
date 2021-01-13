@@ -1,14 +1,7 @@
 <template>
   <div class="">
-    <div v-for="event in events" :key="event.appId">
-      <div v-for="session in event.sessions" :key="session.id">
-        <div v-for="sessionEvent in session.events" :key="sessionEvent.id">
-          {{sessionEvent.gender}}
-        </div>
-      </div>
-     
-    </div>
-    <vue-tabs class="font-display flex flex-col justify-center items-center">
+    
+    <vue-tabs class="font-display flex flex-col justify-center items-center mx-8">
       <!-- new events -->
       <v-tab title="Nieuw">
         <!-- card 1 -->
@@ -25,7 +18,7 @@
                             {{event.name}}
                         </events-titles>
                           <p class="font-regular text-xs">
-                            {{event.date}}, {{event.location}}
+                            {{event.date}}, {{event.city}}
                           </p>
                         </div>
                     </card>

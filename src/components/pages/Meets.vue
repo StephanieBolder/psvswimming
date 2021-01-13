@@ -3,7 +3,7 @@
         <top-nav-right />
         <div class="">
             <heading class="text-xl flex justify-center mt-8">Meets</heading>
-            <div class="text-sm text-center mt-4">Bekijk de meets en registreer je waar je wilt.</div>
+            <div class="text-sm text-center mt-4 mb-8">Bekijk de meets en registreer je waar je wilt.</div>
         </div>
         <meets-content :events="events"/>
     </div>

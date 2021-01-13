@@ -57,7 +57,7 @@
 <script>
 import MicroModal from "micromodal";
 import { initializeModal } from "./util/modal";
-import BottomNav from "./v2/shared/BottomNav.vue";
+import BottomNav from './components/shared/BottomNav.vue';
 
 export default {
   name: "App",

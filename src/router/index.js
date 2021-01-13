@@ -1,183 +1,70 @@
-import Vue from "vue";
-import Router from "vue-router";
-import LoginInput from "../components/LoginInput/index";
-import Logout from "../components/Logout/index";
-import MeetsOverview from "../components/MeetsOverview/index";
-import Meet from "../components/Meet/index";
-import Dashboard from "../components/Dashboard/index";
-import Profile from "../components/Profile";
-import Settings from "../components/Settings/index";
-import UserRegister from "../components/UserRegister/index";
-import MeetsRegister from "../components/MeetsRegister/index";
-import NewsCreate from "../components/NewsCreate/index";
-import News from "../components/News/index";
-import MediaOverview from "../components/MediaOverview/index";
-import AthleteRequestedEvents from "../components/AthleteRequestedEvents/index";
-import AthleteParticipatedEvents from "../components/AthleteParticipatedEvents/index";
-import NotificationsOverview from "../components/NotificationsOverview/index";
-import NotificationsCreate from "../components/NotificationsCreate/index";
-import SwimmersOverview from "../components/SwimmersOverview/index";
-import EventRequestsOverview from "../components/EventRequestsOverview/index";
-import Training from "../components/Training/index";
-import TrainingClass from "../components/TrainingClass/index";
-import TrainingCreate from "../components/TrainingCreate/index";
-import Events from "../v2/pages/Events";
-import EventRegistration from "../v2/pages/EventRegistration";
-import Information from "../v2/pages/Information";
-import Notifications from "../components/Notifications";
-import MeetCreate from "../components/MeetCreate"
-import ResetPassword from "../components/ResetPassword";
-import Register from "../components/Register";
-import Checkmail from "../components/Checkmail";
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Welcome from '../components/pages/Welcome.vue'
+import Login from '../components/pages/Login.vue'
+import Register from '../components/pages/Register.vue'
+import ResetPassword from '../components/pages/ResetPassword.vue'
+import Checkmail from '../components/pages/Checkmail.vue'
+import Profile from '../components/pages/Profile.vue'
+import Meets from '../components/pages/Meets.vue'
+import MeetsRegister from '../components/pages/MeetsRegister.vue'
+import Notifications from '../components/pages/Notifications.vue'
 
-Vue.use(Router);
+Vue.use(VueRouter)
 
-export default new Router({
-  mode: "history",
-  routes: [
-    {
-      path: "/",
-      name: "dashboard",
-      component: Dashboard,
-    },
-    {
-      path: "/login",
-      name: "login",
-      component: LoginInput,
-    },
-    {
-      path: "/logout",
-      name: "logout",
-      component: Logout,
-    },
-    { 
-      path: "/meet/create",
-      name: "meetCreate",
-      component: MeetCreate,
-    },
-    {
-      path: "/meet/:meetId",
-      name: "meet",
-      component: Meet,
-    },
-    {
-      path: "/profile",
-      name: "profile",
-      component: Profile,
-    },
-    {
-      path: "/settings",
-      name: "settings",
-      component: Settings,
-    },
-    {
-      path: "/user/register",
-      name: "user-register",
-      component: UserRegister,
-    },
-    {
-      path: "/meets-register",
-      name: "meets-register",
-      component: MeetsRegister,
-    },
-    {
-      path: "/create-news",
-      name: "news-create",
-      component: NewsCreate,
-    },
-    {
-      path: "/news/:id",
-      name: "news",
-      component: News,
-    },
-    {
-      path: "/media",
-      name: "media-overview",
-      component: MediaOverview,
-    },
-    {
-      path: "/meetrequests",
-      name: "meetrequests",
-      component: AthleteRequestedEvents,
-    },
-    {
-      path: "/meethistory",
-      name: "meethistory",
-      component: AthleteParticipatedEvents,
-    },
-    {
-      path: "/meets",
-      name: "meets",
-      component: MeetsOverview,
-    },
-    {
-      path: "/notificationsCreate",
-      name: "notificationsCreate",
-      component: NotificationsCreate,
-    },
-    {
-      path: "/notifications",
-      name: "notifications",
-      component: Notifications,
-    },
+const routes = [
+ 
+  {
+    path: '/',
+    name: 'Welcome',
+    component: Welcome,
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register,
+  },
+  {
+    path: '/resetpassword',
+    name: 'ResetPassword',
+    component: ResetPassword,
+  },
+  {
+    path: '/checkmail',
+    name: 'Checkmail',
+    component: Checkmail,
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile,
+  },
+  {
+    path: '/meets',
+    name: 'Meets',
+    component: Meets,
+  },
+  {
+    path: '/meetsregister',
+    name: 'meetsregister',
+    component: MeetsRegister,
+  },
+  {
+    path: '/notifications',
+    name: 'notifications',
+    component: Notifications,
+  }
+]
 
-    {
-      path: "/swimmers",
-      name: "swimmers",
-      component: SwimmersOverview,
-    },
-    {
-      path: "/eventrequests",
-      name: "eventrequests",
-      component: EventRequestsOverview,
-    },
-    {
-      path: "/events",
-      name: "events",
-      component: Events,
-    },
-    {
-      path: "/resetpassword",
-      name: "resetpassword",
-      component: ResetPassword,
-    },
-    { path: "/register",
-      name: "register",
-      component: Register,
-    },
-    { path: "/eventregistration",
-      name: "eventregistration",
-      component: EventRegistration,
-    },
-    { path: "/checkmail",
-      name: "checkmail",
-      component: Checkmail,
-    },
-    {
-      path: "/information",
-      name: "information",
-      component: Information,
-    },
-    {
-      path: "/events/:id",
-      name: "eventDetail",
-      component: EventRegistration,
-    },
-    /* TODO ADD NEXT 3 PATHS TO BLACKLIST FOR ROLES WHICH MAY NOT SEE THE COMPONENTS */
-    {
-      path: "/training",
-      name: "training",
-      component: Training,
-    },
-    {
-      path: "/training/:appId",
-      name: "trainingid",
-      component: TrainingClass,
-    },
-    {
-      path: "/trainingCreate",
-      name: "trainingCreate",
-      component: TrainingCreate,
-    },
-  ],
-});
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
+})
+
+export default router

@@ -1,6 +1,6 @@
 <template>
-  <card>
-    <div>
+  <card class="">
+    <div class="w-full">
       <div class="header">
         <div class="header-content">
           <slot name="header"></slot>
@@ -22,7 +22,7 @@
           </svg>
         </button>
       </div>
-      <div class="content" v-if="open">
+      <div class="" v-if="open">
         <slot name="content"></slot>
       </div>
     </div>
@@ -45,6 +45,7 @@ export default {
 .icon {
   width: 20px;
   height: 20px;
+  margin-right: 8px;
 }
 
 .header-content {
@@ -54,6 +55,7 @@ export default {
 .header {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .content {
@@ -64,6 +66,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px 16px;
+  margin: 0px 0px;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-<div class="flex justify-center">
+<div>
   <v-app id="inspire">
     <v-row justify="center">
       <v-date-picker v-model="picker"></v-date-picker>
@@ -15,13 +15,4 @@ export default {
 </script>
 
 <style>
-
-.v-application .primary {
-  background-color: gray !important;
-}
-
-v.application {
-  height: 40px !important;
-}
-
 </style>

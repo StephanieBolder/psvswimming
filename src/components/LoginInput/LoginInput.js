@@ -1,7 +1,7 @@
 import AuthService from "../../services/AuthService";
 import router from "./../../router/index";
 
-var authService = new AuthService();
+var authService = new authService();
 
 export default {
   name: "login-input",

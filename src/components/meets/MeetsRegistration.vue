@@ -25,7 +25,7 @@
                 <card class="">
                     <events-titles class="ml-8 ">
                               <div v-for="session in event.sessions" :key="session.id">
-                             {{session.date.join(' ')}}
+                             <p> {{session.name}} </p>
                            </div>
                        </events-titles>
                     </card>
@@ -34,10 +34,11 @@
                 <div class="flex flex-row">
                   <div v-for="session in event.sessions" :key="session.id">
                     <div v-for="sessionEvent in session.events" :key="sessionEvent.id">
-                    <p> {{sessionEvent.gender}}</p>
-                      <div v-for="eventswimStyle in event.swimstyles" :key="eventswimStyle.id">
-                      <p> {{eventswimStyle.name}} </p>
-                    </div>
+                      <div class="flex flex-row">
+
+                    <p class="text-xs mx-4"> {{sessionEvent.type}}</p>
+                    <p class="text-xs mx-4"> {{sessionEvent.gender}}</p>
+                </div>
                 </div>
                 </div>
                 </div>

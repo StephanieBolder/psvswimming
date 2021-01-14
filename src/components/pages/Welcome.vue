@@ -7,7 +7,9 @@
            <secondary-button class="mt-24 ">Inloggen</secondary-button></router-link>
         </div>
         <div class="w-7/12 ">
-        <primary-button class="mt-4">Registreren</primary-button></div>
+        <router-link to="register">
+        <primary-button class="mt-4">Registreren</primary-button></router-link>
+        </div>
        
     </div>
 </template>

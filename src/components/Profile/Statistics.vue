@@ -1,20 +1,23 @@
 <template>
-  <div class="w-full flex flex-col justify-center mt-8">
-    <div class="mb-4 flex justify-center mx-8" v-for="train in trainings" :key="train.id">
+  <div class="w-full flex flex-col mt-8">
+    <div class="mb-4 mx-8" v-for="train in trainings" :key="train.id">
       <dropdown>
           <template #header>
-            <div class="text-sm flex justify-center">
+            <div class="text-sm">
                 <div class="">
-                    <div class=""></div>
-                        <events-titles class="">
-                        {{ train.date }}
+                    <div class="flex flex-row">
+                        <events-titles class="ml-4">
+                        {{ train.name }}
                         </events-titles>
+                        <p class="text-xs mr-6"> {{train.date}} </p>
+                        <p class="font-bold text-xs mr-12"> {{train.endplace}} </p>
+                        </div>
                 </div>
             </div>
           </template>
           <template #content>
               <div class="items-center flex justify-center mt-4">
-              <div class="w-4/12 bg-black rounded-sm py-1 px-2 text-white text-xs text-center ">Wijzigen
+              <div class="w-4/12 bg-black rounded-sm py-1 px-2 text-white text-xs text-center ">Informatie
               </div>
               </div>
           </template>
@@ -32,11 +35,11 @@ export default {
   data() {
     return {
       trainings: [
-        { id: 1, date: "19 november 2020", location: "Eindhoven" },
-        { id: 2, date: "27 december 2020", location: "Tilburg" },
-        { id: 3, date: "03 januari 2021", location: "Eindhoven" },
-        { id: 4, date: "05 januari 2021", location: "Tilburg" },
-        { id: 4, date: "10 januari 2021", location: "Tilburg" },
+        { id: 1, name: "Dutch Masters", date: "20 - 23 nov", location: "Eindhoven", endplace: "2e" },
+        { id: 2, name: "Zwemmerschaps", date: "02 - 04 dec", location: "Eindhoven", endplace: "7e" },
+        { id: 3, name: "PSV Zwemmen", date: "19 - 21 dec", location: "Eindhoven", endplace: "1e" },
+        { id: 4, name: "Dutch Masters", date: "09 - 12 jan", location: "Eindhoven", endplace: "2e" },
+        { id: 5, name: "Tilburgse zwem", date: "18 - 22 feb", location: "Eindhoven", endplace: "4e" },
         
       ],
     };
